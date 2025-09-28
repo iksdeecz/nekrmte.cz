@@ -130,6 +130,25 @@ header {
   transform: translateY(-5px);
 }
 
+.disclaimer {
+  background-color: #fff3cd;
+  border: 1px solid #ffeeba;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  border-radius: 0.5rem;
+  color: #856404;
+}
+
+.disclaimer p {
+  margin: 0;
+}
+
+body.dark .disclaimer {
+  background-color: #332f00;
+  border-color: #665f00;
+  color: #e6e600;
+}
+
 .posts-grid {
   display: grid;
   gap: 2rem;

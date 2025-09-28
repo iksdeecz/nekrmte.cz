@@ -2,6 +2,7 @@ const postsData = [
   {
     title: "Špenát",
     category: "pes",
+    edible: "s opatrností",
     content: "Špenát obsahuje vysoké množství oxalové kyseliny, která blokuje vstřebávání vápníku a může způsobit poškození ledvin. Psi by neměli jíst špenát pravidelně, ale několik listů čerstvého syrového špenátu pravděpodobně neuškodí."
   },
   {
@@ -109,46 +110,55 @@ const postsData = [
   {
     title: "Banány",
     category: "kocka",
+    edible: "bezpečné",
     content: "Banány jsou bezpečným pamlskem pro kočky, ale bez slupky, aby se neudusily. Obsahují hodně cukru, takže v malém množství. Kočky mohou jíst malé kousky rozmělňovaných banánů, bez slupky a semen."
   },
   {
     title: "Mrkev",
     category: "kocka",
+    edible: "bezpečné",
     content: "Mrkev je bezpečným pamlskem pro kočky a může pomoci zlepšit zdraví zubů. Kočky by neměly jíst celou mrkev, protože se může dusit. Malé kousky vařené nebo syrové mrkve jsou v pořádku."
   },
   {
     title: "Rajčata",
     category: "kocka",
+    edible: "s opatrností",
     content: "Rajčata jsou součástí nočních rostlin a obsahují solamin. Zralé červené rajčata bez stonků a listů jsou obvykle bezpečné, ale stonky a listy jsou toxické. Vyhněte se tomu, pokud nedojde k poškození ledvin nebo žaludku."
   },
   {
     title: "Brambory",
     category: "kocka",
+    edible: "s opatrností",
     content: "Syrové brambory obsahují solamin, který je toxický pro kočky. Vařené brambory bez koření nebo omáček jsou obvykle bezpečné, ale vysoký obsah škrobu může způsobit trávení. Nedoporučuje se jako pravidelný pamlsek."
   },
   {
     title: "Zelené fazole",
     category: "kocka",
+    edible: "bezpečné",
     content: "Zelené fazole jsou bezpečné pro kočky, pokud jsou vařené a bez koření. Syrové fazole obsahují lektiny, které mohou způsobit žaludeční problémy. Malé kousky vařených zelených fazolí jsou v pořádku."
   },
   {
     title: "Meloun",
     category: "pes",
+    edible: "bezpečné",
     content: "Meloun je bezpečným pamlskem pro psy, ale bez slupky a semen, protože begovinky mohou způsobit žaludeční problémy. Je hydratující a nízkokalorický. Psi mohou jíst kousky dužniny melounu."
   },
   {
     title: "Špenát",
     category: "pes",
+    edible: "s opatrností",
     content: "Špenát obsahuje vysoké množství oxalové kyseliny, která blokuje vstřebáv Hus aní vápníku a může způsobit poškození ledvin. Psi by neměli jíst špenát pravidelně, ale několik listů pravuttosto plastického syrového špenátu pravděpodobně neuškodí."
   },
   {
     title: "Zelenina",
     category: "pes",
+    edible: "bezpečné",
     content: "Psi mohou jíst listy jako římský, arugula nebo iceberg salát, ale měli by se vyhýbat špenátu a kedlíku. Římský, arugula a iceberg salát sú hydratující a křupavé pamlsky, které psi často milují. Kedl obsahuje calcium oxalate, který může vést ke kamenům v ledvinách."
   },
   {
-    title: "Ovce",
+    title: "Oříšky",
     category: "pes",
+    edible: "nebezpečné",
     content: "Psi mohou vyjídat středně opracované oříšky jako arašídy, ovocné oříšky a kešu, ale pouze v malém množství a bez soli. Oříšky mají vysoký obsah tuku, který může způsobit trávení nebo dokonce pankreatitidu. Makadamia oříšky jsou velmi toxické pro psy."
   },
   {
