@@ -25,37 +25,44 @@ const postsData = [
   {
     title: "Žvýkačky a sladkosti s xylitolem",
     category: "pes",
+    edible: "nebezpečné",
     content: "Xylitol způsobuje u psů prudké snížení hladiny cukru v krvi, což vede k slabosti, koordinace, záchvatům nebo zástavě srdce. I malá množství (0,045 g na kg hmotností) jsou nebezpečná."
   },
   {
-    title: "Mléko a mléčné výrobky",
-    category: "kocka",
-    edible: "nebezpečné",
-    content: "Mnoho dospělých koček nemá lactázu pro trávení laktózy. Komým mléko způsobuje průjmy, nadýmání a dehydrataci. Vyhněte se kravímu mléku - použijte kočičí mléko nebo mléko bez laktózy pouze na doporučení veterináře."
+    title: "Meloun",
+    category: "pes",
+    edible: "bezpečné",
+    content: "Meloun je bezpečným pamlskem pro psy, ale bez slupky a semen, protože begovinky mohou způsobit žaludeční problémy. Je hydratující a nízkokalorický. Psi mohou jíst kousky dužniny melounu."
   },
   {
-    title: "Rybí konzervy pro lidi",
-    category: "kocka",
-    edible: "nebezpečné",
-    content: "Rybí konzervy pro lidi často obsahují cibuli a další toxiny. Kloub konzumace způsobuje toxickou reakci kvůli tartár, který je v rybách. Používejte speciální konzervy pro kočky s rybami."
+    title: "Špenát",
+    category: "pes",
+    edible: "s opatrností",
+    content: "Špenát obsahuje vysoké množství oxalové kyseliny, která blokuje vstřebávání vápníku a může způsobit poškození ledvin. Psi by neměli jíst špenát pravidelně, ale několik listů čerstvého syrového špenátu pravděpodobně neuškodí."
   },
   {
-    title: "Liliové rostliny a tulipány",
-    category: "kocka",
-    edible: "nebezpečné",
-    content: "Liliové rostliny způsobují selhání ledvin u koček často fatální. I pyl nebo voda z vázy s lií bilia může být nebezpečná. Okamžitě odstraňte všechny li jiniky z domu."
+    title: "Zelenina",
+    category: "pes",
+    edible: "bezpečné",
+    content: "Psi mohou jíst listy jako římský, arugula nebo iceberg salát, ale měli by se vyhýbat špenátu a kedlíku. Římský, arugula a iceberg salát sú hydratující a křupavé pamlsky, které psi často milují. Kedl obsahuje calcium oxalate, který může vést ke kamenům v ledvinách."
   },
   {
-    title: "Alkohol (Pivo, Šampaňsko, Gin, Likér, Rum, Vodka, Whisky, Víno)",
-    category: "oba",
-    edible: "nebezpečné",
-    content: "Alkohol způsobuje intoxicaci, kóma nebo smrt u zvířat. Psi a kočky metabolizují alkohol jinak než lidé a rychleji je postižením centrální nervové soustavy."
+    title: "Ovce",
+    category: "pes",
+    edible: "s opatrností",
+    content: "Psi mohou vyjídat středně opracované oříšky jako arašídy, ovocné oříšky a kešu, ale pouze v malém množství a bez soli. Oříšky mají vysoký obsah tuku, který může způsobit trávení nebo dokonce pankreatitidu. Makadamia oříšky jsou velmi toxické pro psy."
   },
   {
-    title: "Kofein",
-    category: "oba",
-    edible: "nebezpečné",
-    content: "Kofein v kávě, čaji nebo Kole je stimulant, který způsobuje rychlý srdeční tep, třes, záchvaty nebo srdeční zástavu. Kočky jsou velmi citlivé."
+    title: "Ovesná kaše",
+    category: "pes",
+    edible: "s opatrností",
+    content: "Ovesná kaše může být bezpečným jídlem pro psy. Vysoký obsah vlákniny může způsobit žaludeční nepohodlí, plyn, zvracení a prújem, zvláště pokud pes není na vlákninu zvyklý. Psi by měli jíst pouze vanilla ovesnou kaši. Některé příchutě a přídavky jako rašeliny jsou toxické pro psy."
+  },
+  {
+    title: "Olivy",
+    category: "pes",
+    edible: "s opatrností",
+    content: "Olivy nejsou toxické pro psy a mohou být bezpečné v malém množství. Psi by nikdy neměli dostávat olivy s peckami, protože mohou způsobit udušení nebo střevní blokádu, a mohou způsobit zubní prasknutí. Konzervované nebo nakládané olivy by se měly vyhýbat kvůli vysokému obsahu sodíku. Olivy mají vysoký obsah tuku, který může způsobit trávení."
   },
   {
     title: "Hlíva upchaná",
@@ -66,11 +73,13 @@ const postsData = [
   {
     title: "Vánoční koláče a vanilka",
     category: "pes",
+    edible: "nebezpečné",
     content: "Vánoční koláče často obsahují hrozinky, čokoládu nebo vanilku s xylitolem. Vanilka s xylitolem je stejně nebezpečná ako xylitol v žvýkačkách. Ujistěte se, že vánoční dobrůtky jsou bezpečné."
   },
   {
     title: "Macadamia oříšky",
     category: "pes",
+    edible: "nebezpečné",
     content: "Macadamia oříšky způsobují u psů záchvaty, zvracení, hypertermii a ochrnutí koži. Vyhněte se jim úplně."
   },
   {
@@ -88,6 +97,7 @@ const postsData = [
   {
     title: "Syrové těsto s droždím",
     category: "pes",
+    edible: "nebezpečné",
     content: "Syrové těsto s droždım může způsobit kvašení v žaludku, nadýmání nebo dokonce trhav ziekte. Může být život ohrozhující."
   },
   {
