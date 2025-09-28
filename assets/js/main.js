@@ -1,10 +1,4 @@
-const postsData = [
-  {
-    title: "Špenát",
-    category: "pes",
-    edible: "s opatrností",
-    content: "Špenát obsahuje vysoké množství oxalové kyseliny, která blokuje vstřebávání vápníku a může způsobit poškození ledvin. Psi by neměli jíst špenát pravidelně, ale několik listů čerstvého syrového špenátu pravděpodobně neuškodí."
-  },
+let postsData = [
   {
     title: "Hrozny a rozinky",
     category: "oba",
@@ -36,28 +30,16 @@ const postsData = [
     content: "Meloun je bezpečným pamlskem pro psy, ale bez slupky a semen, protože begovinky mohou způsobit žaludeční problémy. Je hydratující a nízkokalorický. Psi mohou jíst kousky dužniny melounu."
   },
   {
-    title: "Špenát",
-    category: "pes",
-    edible: "s opatrností",
-    content: "Špenát obsahuje vysoké množství oxalové kyseliny, která blokuje vstřebávání vápníku a může způsobit poškození ledvin. Psi by neměli jíst špenát pravidelně, ale několik listů čerstvého syrového špenátu pravděpodobně neuškodí."
-  },
-  {
     title: "Zelenina",
     category: "pes",
     edible: "bezpečné",
     content: "Psi mohou jíst listy jako římský, arugula nebo iceberg salát, ale měli by se vyhýbat špenátu a kedlíku. Římský, arugula a iceberg salát sú hydratující a křupavé pamlsky, které psi často milují. Kedl obsahuje calcium oxalate, který může vést ke kamenům v ledvinách."
   },
   {
-    title: "Ovce",
-    category: "pes",
-    edible: "s opatrností",
-    content: "Psi mohou vyjídat středně opracované oříšky jako arašídy, ovocné oříšky a kešu, ale pouze v malém množství a bez soli. Oříšky mají vysoký obsah tuku, který může způsobit trávení nebo dokonce pankreatitidu. Makadamia oříšky jsou velmi toxické pro psy."
-  },
-  {
     title: "Ovesná kaše",
     category: "pes",
     edible: "s opatrností",
-    content: "Ovesná kaše může být bezpečným jídlem pro psy. Vysoký obsah vlákniny může způsobit žaludeční nepohodlí, plyn, zvracení a prújem, zvláště pokud pes není na vlákninu zvyklý. Psi by měli jíst pouze vanilla ovesnou kaši. Některé příchutě a přídavky jako rašeliny jsou toxické pro psy."
+    content: "Ovesná kaše může být bezpečným jídlem pro psy. Vysoký obsah vlákniny může způsobit žaludeční nepohodlí, plyny, zvracení a prújem, zvláště pokud pes není na vlákninu zvyklý. Psi by měli jíst pouze ovesnou kaši. Některé příchutě a přídavky jsou pro psy toxické."
   },
   {
     title: "Olivy",
@@ -102,7 +84,7 @@ const postsData = [
     content: "Syrové těsto s droždım může způsobit kvašení v žaludku, nadýmání nebo dokonce trhav ziekte. Může být život ohrozhující."
   },
   {
-    title: "Tis (yew)",
+    title: "Tis",
     category: "oba",
     edible: "nebezpečné",
     content: "Tis způsobuje srdeční zástavu, křeče a smrt u psů i koček. Všechny části jsou vysoce toxické. Vyhněte se."
@@ -162,12 +144,6 @@ const postsData = [
     content: "Psi mohou vyjídat středně opracované oříšky jako arašídy, ovocné oříšky a kešu, ale pouze v malém množství a bez soli. Oříšky mají vysoký obsah tuku, který může způsobit trávení nebo dokonce pankreatitidu. Makadamia oříšky jsou velmi toxické pro psy."
   },
   {
-    title: "Ovesná kaše",
-    category: "pes",
-    edible: "bezpečné",
-    content: "Ovesná kaše může být bezpečným jídlem pro psy. Vysoký obsah vlákniny může způsobit žaludeční nepohodlí, plyn, zvracení a prújem, zvláště pokud pes není na vlákninu zvyklý. Psi by měli jíst pouze vanilla ovesnou kaši. Některé příchutě a přídavky jako rašeliny jsou toxické pro psy."
-  },
-  {
     title: "Olivy",
     category: "pes",
     edible: "s opatrností",
@@ -184,12 +160,6 @@ const postsData = [
     category: "kocka",
     edible: "bezpečné",
     content: "Mrkev je bezpečným pamlskem pro kočky a může pomoci zlepšit zdraví zubů. Kočky by neměly jíst celou mrkev, protože se může dusit. Malé kousky vařené nebo syrové mrkve jsou v pořádku."
-  },
-  {
-    title: "Rajčata (Tomatoes)",
-    category: "kocka",
-    edible: "s opatrností",
-    content: "Rajčata jsou součástí nočních rostlin a obsahují solamin. Zralé červené rajčata bez stonků a listů jsou obvykle bezpečné, ale stonky a listy jsou toxické. Vyhněte se tomu, pokud nedojde k poškození ledvin nebo žaludku."
   },
   {
     title: "Brambory",
@@ -217,6 +187,16 @@ const postsData = [
   }
 ];
 
+postsData = postsData.reduce((acc, current) => {
+  const key = JSON.stringify({title: current.title, content: current.content, edible: current.edible});
+  if (!acc.some(item => JSON.stringify({title: item.title, content: item.content, edible: item.edible}) === key)) {
+    acc.push(current);
+  }
+  return acc;
+}, []);
+
+postsData.sort((a, b) => a.title.localeCompare(b.title, 'cs'));
+
 document.addEventListener('DOMContentLoaded', function() {
   const buttons = document.querySelectorAll('.tabs button');
   const postsDiv = document.getElementById('posts-list');
@@ -231,6 +211,9 @@ document.addEventListener('DOMContentLoaded', function() {
       's opatrností': 'caution',
       'nebezpečné': 'dangerous'
     };
+
+    // Seřadit karty abecedně
+    filtered.sort((a, b) => a.title.localeCompare(b.title, 'cs'));
 
     filtered.forEach(post => {
       const article = document.createElement('article');
