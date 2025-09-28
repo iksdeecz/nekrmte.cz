@@ -154,11 +154,13 @@ const postsData = [
   {
     title: "Ovesná kaše",
     category: "pes",
+    edible: "bezpečné",
     content: "Ovesná kaše může být bezpečným jídlem pro psy. Vysoký obsah vlákniny může způsobit žaludeční nepohodlí, plyn, zvracení a prújem, zvláště pokud pes není na vlákninu zvyklý. Psi by měli jíst pouze vanilla ovesnou kaši. Některé příchutě a přídavky jako rašeliny jsou toxické pro psy."
   },
   {
     title: "Olivy",
     category: "pes",
+    edible: "s opatrností",
     content: "Olivy nejsou toxické pro psy a mohou být bezpečné v malém množství. Psi by nikdy neměli dostávat olivy s peckami, protože mohou způsobit udušení nebo střevní blokádu, a mohou způsobit zubní prasknutí. Konzervované nebo nakládané olivy by se měly vyhýbat kvůli vysokému obsahu sodíku. Olivy mají vysoký obsah tuku, který může způsobit trávení."
   },
   {
