@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nekrmte.cz</title>
+  <meta name="description" content="Co nesmí zvířata jíst">
+  <meta name="keywords" content="psi, kočky, toxické potraviny, nebezpečné jídlo pro zvířata, zdraví psů, zdraví koček">
+  <meta property="og:title" content="Nekrmte.cz - Co nesmí zvířata jíst">
+  <meta property="og:description" content="Zjistěte, co nesmí jíst psi a kočky – informace o toxických potravinách pro ochranu domácích mazlíčků.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.nekrmte.cz">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header>
+    <button id="theme-toggle" class="theme-toggle">🌙</button>
+    <h1>Nekrmte.cz</h1>
+  </header>
+
+  <main>
+    <div class="hero">
+      <h1>Vítejte na Nekrmte.cz</h1>
+      <p class="hero-subtitle">Zjistěte, co vaše zvířata nesmí jíst - informace pro psy a kočky</p>
+    </div>
+
+    <div class="tabs">
+      <button data-category="pes"><i class="fas fa-dog"></i> Pes</button>
+      <button data-category="kocka"><i class="fas fa-cat"></i> Kočka</button>
+    </div>
+
+    <section class="tips">
+      <h2>Tipy</h2>
+      <p><strong>Když sdílíte jídlo s kočkami, je důležité mít na paměti několik věcí:</strong></p>
+      <ul class="tips-list">
+        <li>Poraďte se s veterinářem, než kočce dáte jakékoli jídlo – obzvlášť pokud užívá léky nebo má zdravotní problémy (např. cukrovku, alergie apod.). Některé léky mohou s potravinami reagovat, takže neriskujte!</li>
+        <li>Nové potraviny podávejte v malém množství. Sledujte kočku po jejich konzumaci a pokud se objeví negativní příznaky, už jí danou potravinu nedávejte.</li>
+        <li>Doplňkové potraviny mimo běžnou stravu by neměly tvořit více než 10 % denního příjmu. Například pokud kočka sní denně 1 hrnček krmiva, neměla by dostat více než 1/10 hrníčku pamlsků (např. několik borůvek). Přílišné množství může vést k trávicím potížím, proto je střídmost klíčová.</li>
+        <li>Potraviny by měly být nakrájené na malé kousky bez rizika zaskočení (např. pecky, slupky, semínka). Tyto překážky mohou způsobit i neprůchodnost trávicího traktu. Nikdy je kočkám nedávejte, i když jsou pro lidi zcela běžné.</li>
+        <li>Kočky by neměly jíst potraviny se solí, olejem, cukrem, kořením, omáčkami nebo jinými úpravami. Tyto přísady často obsahují pro kočky škodlivé, někdy i jedovaté látky, jako je česnek, cibule či xylitol. Totéž platí i pro pokrmy připravené s těmito ingrediencemi.</li>
+        <li>Potraviny s vysokým obsahem tuku dávejte jen výjimečně. I když jsou pro lidi často zdravé, u zvířat mohou způsobit zažívací potíže. U psů může nadbytek tuku vyvolat zánět slinivky (pankreatitidu). U koček se tato souvislost stále zkoumá, ale pro jistotu je vhodné tuk omezit.</li>
+        <li>Kočky by neměly jíst průmyslově zpracované potraviny (pečivo, balené pochutiny, fast food apod.). Jsou nezdravé, často tučné a mohou obsahovat i jedovaté látky, například sladidlo xylitol. Pokud si nejste jistí složením, raději je kočce nedávejte.</li>
+        <li>Vyhněte se konzervovaným potravinám (např. ovoce, zelenina) – obsahují konzervanty, nadbytek soli či cukru, což je škodlivé jak pro kočky, tak pro lidi. Vybírejte raději čerstvé nebo mražené varianty.</li>
+        <li>Kočky postrádají enzymy k trávení sacharidů. Jsou masožravci, a proto nedokážou zpracovat cukry jako lidé nebo psi. Dlouhodobé podávání sacharidů a sladkostí vede k trávicím potížím, obezitě a cukrovce. Jejich strava by proto neměla obsahovat více než 2 % sacharidů nebo cukrů.</li>
+      </ul>
+    </section>
+
+    <div id="posts-list" class="posts-grid">
+      <!-- Posts will be inserted here by JS -->
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; Nekrmte.cz. Všechna práva vyhrazena. | <a href="https://github.com/iksdeecz/nekrmte.cz" target="_blank">GitHub</a></p>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
