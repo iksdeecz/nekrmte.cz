@@ -1,8 +1,8 @@
 const postsData = [
   {
-    title: "Čokoláda",
-    category: "oba",
-    content: "Čokoláda je toxická pro psi i kočky kvůli theobrominu a kofeinu. Může způsobit zvracení, průjem, třes, srdeční problémy nebo dokonce smrt. Nikdy nekrmte čokoládou!<br><small>Zdroj: <a href='https://www.akc.org/expert-advice/advice/dogs-health/chocolate-poisonous-dogs/' target='_blank'>AKC: Chocolate Poisonous to Dogs</a></small>"
+    title: "Špenát",
+    category: "pes",
+    content: "Špenát obsahuje vysoké množství oxalové kyseliny, která blokuje vstřebávání vápníku a může způsobit poškození ledvin. Psi by neměli jíst špenát pravidelně, ale několik listů čerstvého syrového špenátu pravděpodobně neuškodí."
   },
   {
     title: "Hrozny a rozinky",
@@ -40,7 +40,7 @@ const postsData = [
     content: "Liliové rostliny způsobují selhání ledvin u koček často fatální. I pyl nebo voda z vázy s lií bilia může být nebezpečná. Okamžitě odstraňte všechny li jiniky z domu."
   },
   {
-    title: "Alkohol",
+    title: "Alkohol (Pivo, Šampaňsko, Gin, Likér, Rum, Vodka, Whisky, Víno)",
     category: "oba",
     content: "Alkohol způsobuje intoxicaci, kóma nebo smrt u zvířat. Psi a kočky metabolizují alkohol jinak než lidé a rychleji je postižením centrální nervové soustavy."
   },
@@ -83,6 +83,61 @@ const postsData = [
     title: "Tis (yew)",
     category: "oba",
     content: "Tis způsobuje srdeční zástavu, křeče a smrt u psů i koček. Všechny části jsou vysoce toxické. Vyhněte se."
+  },
+  {
+    title: "Banány",
+    category: "kocka",
+    content: "Banány jsou bezpečným pamlskem pro kočky, ale bez slupky, aby se neudusily. Obsahují hodně cukru, takže v malém množství. Kočky mohou jíst malé kousky rozmělňovaných banánů, bez slupky a semen."
+  },
+  {
+    title: "Mrkev",
+    category: "kocka",
+    content: "Mrkev je bezpečným pamlskem pro kočky a může pomoci zlepšit zdraví zubů. Kočky by neměly jíst celou mrkev, protože se může dusit. Malé kousky vařené nebo syrové mrkve jsou v pořádku."
+  },
+  {
+    title: "Rajčata",
+    category: "kocka",
+    content: "Rajčata jsou součástí nočních rostlin a obsahují solamin. Zralé červené rajčata bez stonků a listů jsou obvykle bezpečné, ale stonky a listy jsou toxické. Vyhněte se tomu, pokud nedojde k poškození ledvin nebo žaludku."
+  },
+  {
+    title: "Brambory",
+    category: "kocka",
+    content: "Syrové brambory obsahují solamin, který je toxický pro kočky. Vařené brambory bez koření nebo omáček jsou obvykle bezpečné, ale vysoký obsah škrobu může způsobit trávení. Nedoporučuje se jako pravidelný pamlsek."
+  },
+  {
+    title: "Zelené fazole",
+    category: "kocka",
+    content: "Zelené fazole jsou bezpečné pro kočky, pokud jsou vařené a bez koření. Syrové fazole obsahují lektiny, které mohou způsobit žaludeční problémy. Malé kousky vařených zelených fazolí jsou v pořádku."
+  },
+  {
+    title: "Meloun",
+    category: "pes",
+    content: "Meloun je bezpečným pamlskem pro psy, ale bez slupky a semen, protože begovinky mohou způsobit žaludeční problémy. Je hydratující a nízkokalorický. Psi mohou jíst kousky dužniny melounu."
+  },
+  {
+    title: "Špenát",
+    category: "pes",
+    content: "Špenát obsahuje vysoké množství oxalové kyseliny, která blokuje vstřebáv Hus aní vápníku a může způsobit poškození ledvin. Psi by neměli jíst špenát pravidelně, ale několik listů pravuttosto plastického syrového špenátu pravděpodobně neuškodí."
+  },
+  {
+    title: "Zelenina",
+    category: "pes",
+    content: "Psi mohou jíst listy jako římský, arugula nebo iceberg salát, ale měli by se vyhýbat špenátu a kedlíku. Římský, arugula a iceberg salát sú hydratující a křupavé pamlsky, které psi často milují. Kedl obsahuje calcium oxalate, který může vést ke kamenům v ledvinách."
+  },
+  {
+    title: "Ovce",
+    category: "pes",
+    content: "Psi mohou vyjídat středně opracované oříšky jako arašídy, ovocné oříšky a kešu, ale pouze v malém množství a bez soli. Oříšky mají vysoký obsah tuku, který může způsobit trávení nebo dokonce pankreatitidu. Makadamia oříšky jsou velmi toxické pro psy."
+  },
+  {
+    title: "Ovesná kaše",
+    category: "pes",
+    content: "Ovesná kaše může být bezpečným jídlem pro psy. Vysoký obsah vlákniny může způsobit žaludeční nepohodlí, plyn, zvracení a prújem, zvláště pokud pes není na vlákninu zvyklý. Psi by měli jíst pouze vanilla ovesnou kaši. Některé příchutě a přídavky jako rašeliny jsou toxické pro psy."
+  },
+  {
+    title: "Olivy",
+    category: "pes",
+    content: "Olivy nejsou toxické pro psy a mohou být bezpečné v malém množství. Psi by nikdy neměli dostávat olivy s peckami, protože mohou způsobit udušení nebo střevní blokádu, a mohou způsobit zubní prasknutí. Konzervované nebo nakládané olivy by se měly vyhýbat kvůli vysokému obsahu sodíku. Olivy mají vysoký obsah tuku, který může způsobit trávení."
   }
 ];
 
