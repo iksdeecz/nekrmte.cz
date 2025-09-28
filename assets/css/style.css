@@ -307,3 +307,107 @@ body.dark .tags .tag.tag-kocka {
 body.dark .tips-list li {
   color: #e6e6e6;
 }
+
+.search-container {
+  margin-bottom: 2rem;
+}
+
+#food-search {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #d2d2d7;
+  border-radius: 0.5rem;
+  font-family: inherit;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+#food-search:focus {
+  outline: none;
+  border-color: #0071e3;
+  box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.1);
+}
+
+.search-results {
+  margin-top: 1rem;
+}
+
+.search-result {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background-color: #f5f5f7;
+  border: 1px solid #d2d2d7;
+  margin-bottom: 0.5rem;
+  transition: background-color 0.3s ease;
+}
+
+.search-result:hover {
+  background-color: #e6f7ff;
+}
+
+.search-result h3 {
+  margin: 0 0 0.5rem 0;
+  color: #1d1d1f;
+}
+
+.search-result p {
+  margin: 0.5rem 0;
+  color: #6e6e73;
+}
+
+body.dark .search-result {
+  background-color: #333;
+  border-color: #555;
+  color: #f5f5f7;
+}
+
+body.dark .search-result h3 {
+  color: #f5f5f7;
+}
+
+body.dark .search-result p {
+  color: #ccc;
+}
+
+/* Safety color classes for posts */
+.post.safe {
+  background-color: #d5f4b7;
+  border-color: #27ae60;
+}
+
+.post.safe:hover {
+  background-color: #a8e6a1;
+}
+
+.post.caution {
+  background-color: #f9e79f;
+  border-color: #f1c40f;
+}
+
+.post.caution:hover {
+  background-color: #f7db8a;
+}
+
+.post.dangerous {
+  background-color: #fce4e4;
+  border-color: #e74c3c;
+}
+
+.post.dangerous:hover {
+  background-color: #f8c9c9;
+}
+
+body.dark .post.safe {
+  background-color: #1a4d2a;
+  border-color: #27ae60;
+}
+
+body.dark .post.caution {
+  background-color: #4d3d00;
+  border-color: #f1c40f;
+}
+
+body.dark .post.dangerous {
+  background-color: #4d1a1a;
+  border-color: #e74c3c;
+}

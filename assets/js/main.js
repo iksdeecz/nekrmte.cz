@@ -7,16 +7,19 @@ const postsData = [
   {
     title: "Hrozny a rozinky",
     category: "oba",
+    edible: "nebezpečné",
     content: "Hrozny a rozinky způsobují záhadné selhání ledvin u psů a koček. I malé množství může být nebezpečné - vyhněte se jim úplně.<br><small>Zdroj: <a href='https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/grapes-rhubarb' target='_blank'>ASPCA: Grapes and Raisins</a></small>"
   },
   {
     title: "Avokádo",
     category: "oba",
+    edible: "nebezpečné",
     content: "Avokádo obsahuje persin, který je toxický pro zvířata. Způsobuje zvracení a průjmy. Ndřítejví zvířatům avokádový olej, chowder ani žádné části avokáda.<br><small>Zdroj: <a href='https://www.petmd.com/dog/nutrition/evr_dg_avocado_toxic_to_dogs' target='_blank'>PetMD: Avocado Toxic to Dogs</a></small>"
   },
   {
     title: "Cibule a česnek",
     category: "oba",
+    edible: "nebezpečné",
     content: "Cibule, pórek a česnek poškozují červené krvinky a mohou způsobit anémii. Osmička nebo více česneku obsažená biologicky může být smrtelná. Kočky jsou citlivější, vyhněte se úplně."
   },
   {
@@ -27,31 +30,37 @@ const postsData = [
   {
     title: "Mléko a mléčné výrobky",
     category: "kocka",
+    edible: "nebezpečné",
     content: "Mnoho dospělých koček nemá lactázu pro trávení laktózy. Komým mléko způsobuje průjmy, nadýmání a dehydrataci. Vyhněte se kravímu mléku - použijte kočičí mléko nebo mléko bez laktózy pouze na doporučení veterináře."
   },
   {
     title: "Rybí konzervy pro lidi",
     category: "kocka",
+    edible: "nebezpečné",
     content: "Rybí konzervy pro lidi často obsahují cibuli a další toxiny. Kloub konzumace způsobuje toxickou reakci kvůli tartár, který je v rybách. Používejte speciální konzervy pro kočky s rybami."
   },
   {
     title: "Liliové rostliny a tulipány",
     category: "kocka",
+    edible: "nebezpečné",
     content: "Liliové rostliny způsobují selhání ledvin u koček často fatální. I pyl nebo voda z vázy s lií bilia může být nebezpečná. Okamžitě odstraňte všechny li jiniky z domu."
   },
   {
     title: "Alkohol (Pivo, Šampaňsko, Gin, Likér, Rum, Vodka, Whisky, Víno)",
     category: "oba",
+    edible: "nebezpečné",
     content: "Alkohol způsobuje intoxicaci, kóma nebo smrt u zvířat. Psi a kočky metabolizují alkohol jinak než lidé a rychleji je postižením centrální nervové soustavy."
   },
   {
     title: "Kofein",
     category: "oba",
+    edible: "nebezpečné",
     content: "Kofein v kávě, čaji nebo Kole je stimulant, který způsobuje rychlý srdeční tep, třes, záchvaty nebo srdeční zástavu. Kočky jsou velmi citlivé."
   },
   {
     title: "Hlíva upchaná",
     category: "kocka",
+    edible: "nebezpečné",
     content: "Hlíva upchaná vyvolává akutní selhání ledvin u koček. Rostlina mucin způsobuje vysazení koncentrační schopnost ledvin. I malá množství mohou být fatální."
   },
   {
@@ -67,11 +76,13 @@ const postsData = [
   {
     title: "Levandule",
     category: "kocka",
+    edible: "nebezpečné",
     content: "Levandule může být toxická pro kočky vlivem stavů orálního vetření. Může způsobit zvracení a deprese. Vyhněte se velicie množstvím."
   },
   {
     title: "Chřest",
     category: "kocka",
+    edible: "nebezpečné",
     content: "Chřest obsahuje asparagin, který může způsobit u koček zvracení a průjem. Vyhňte se."
   },
   {
@@ -82,6 +93,7 @@ const postsData = [
   {
     title: "Tis (yew)",
     category: "oba",
+    edible: "nebezpečné",
     content: "Tis způsobuje srdeční zástavu, křeče a smrt u psů i koček. Všechny části jsou vysoce toxické. Vyhněte se."
   },
   {
@@ -138,6 +150,48 @@ const postsData = [
     title: "Olivy",
     category: "pes",
     content: "Olivy nejsou toxické pro psy a mohou být bezpečné v malém množství. Psi by nikdy neměli dostávat olivy s peckami, protože mohou způsobit udušení nebo střevní blokádu, a mohou způsobit zubní prasknutí. Konzervované nebo nakládané olivy by se měly vyhýbat kvůli vysokému obsahu sodíku. Olivy mají vysoký obsah tuku, který může způsobit trávení."
+  },
+  {
+    title: "Banány",
+    category: "kocka",
+    edible: "bezpečné",
+    content: "Banány jsou bezpečným pamlskem pro kočky, ale bez slupky, aby se neudusily. Obsahují hodně cukru, takže v malém množství. Kočky mohou jíst malé kousky rozmělňovaných banánů, bez slupky a semen."
+  },
+  {
+    title: "Mrkev",
+    category: "kocka",
+    edible: "bezpečné",
+    content: "Mrkev je bezpečným pamlskem pro kočky a může pomoci zlepšit zdraví zubů. Kočky by neměly jíst celou mrkev, protože se může dusit. Malé kousky vařené nebo syrové mrkve jsou v pořádku."
+  },
+  {
+    title: "Rajčata (Tomatoes)",
+    category: "kocka",
+    edible: "s opatrností",
+    content: "Rajčata jsou součástí nočních rostlin a obsahují solamin. Zralé červené rajčata bez stonků a listů jsou obvykle bezpečné, ale stonky a listy jsou toxické. Vyhněte se tomu, pokud nedojde k poškození ledvin nebo žaludku."
+  },
+  {
+    title: "Brambory",
+    category: "kocka",
+    edible: "s opatrností",
+    content: "Syrové brambory obsahují solamin, který je toxický pro kočky. Vařené brambory bez koření nebo omáček jsou obvykle bezpečné, ale vysoký obsah škrobu může způsobit trávení. Nedoporučuje se jako pravidelný pamlsek."
+  },
+  {
+    title: "Zelené fazole",
+    category: "kocka",
+    edible: "bezpečné",
+    content: "Zelené fazole jsou bezpečné pro kočky, pokud jsou vařené a bez koření. Syrové fazole obsahují lektiny, které mohou způsobit žaludeční problémy. Malé kousky vařených zelených fazolí jsou v pořádku."
+  },
+  {
+    title: "Jablka",
+    category: "kocka",
+    edible: "bezpečné",
+    content: "Jablka jsou bezpečným pamlskem pro kočky, ale bez jadřinec, stonku nebo semen, které obsahují malé množství kyanidu. Kočky mohou jíst malé kousky nakrájených i připravených příloh, bez jadřinců a semen."
+  },
+  {
+    title: "Mrkev",
+    category: "kocka",
+    edible: "bezpečné",
+    content: "Mrkev je bezpečným pamlskem pro kočky a může pomoci zlepšit zdraví zubů. Kočky by neměly jíst celou mrkev, protože se může dusit. Malé kousky vařené nebo syrové mrkve jsou v pořádku."
   }
 ];
 
@@ -150,9 +204,16 @@ document.addEventListener('DOMContentLoaded', function() {
     postsDiv.innerHTML = '';
     let filtered = postsData.filter(post => post.category === category || post.category === 'oba');
 
+    const edibleClasses = {
+      'bezpečné': 'safe',
+      's opatrností': 'caution',
+      'nebezpečné': 'dangerous'
+    };
+
     filtered.forEach(post => {
       const article = document.createElement('article');
-      article.className = 'post ' + post.category;
+      const edibleClass = edibleClasses[post.edible] || '';
+      article.className = 'post ' + post.category + ' ' + edibleClass;
       let tags = '';
       if (post.category === 'oba') {
         tags = '<span class="tag tag-kocka">Kočka</span><span class="tag tag-pes">Pes</span>';
