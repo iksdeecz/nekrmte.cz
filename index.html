@@ -1,170 +1,69 @@
 <!doctype html>
-<html lang="cs">
+<html lang="cs" data-theme="light">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Přehled potravin, které jsou pro psy a kočky bezpečné, rizikové nebo nebezpečné.">
-  <meta name="theme-color" content="#0b71d9">
-  <meta property="og:title" content="Nekrmte.cz – Co nesmí zvířata jíst">
-  <meta property="og:description" content="Přehled potravin pro ochranu psů a koček.">
+  <meta name="description" content="Ověřený přehled vybraných potravin a rizik pro psy a kočky. Při podezření na otravu vždy volejte veterináře.">
+  <meta name="theme-color" content="#0b4f6c">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://www.nekrmte.cz/">
+  <meta property="og:title" content="Nekrmte.cz – když zvíře snědlo něco nevhodného">
+  <meta property="og:description" content="Ověřený přehled vybraných potravin pro psy a kočky. Při podezření na otravu volejte veterináře.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.nekrmte.cz">
-  <title>Nekrmte.cz – Co nesmí zvířata jíst</title>
-  <style>
-    :root { color-scheme:light; --page:#f6f9fc; --surface:#fff; --soft:#eef6ff; --text:#17212b; --muted:#607080; --border:#dce5ef; --primary:#096dd2; --primary-dark:#075caf; --shadow:0 10px 30px rgb(23 33 43 / 8%); --safe:#167a48; --safe-bg:#e5f7ed; --caution:#8c6300; --caution-bg:#fff5cc; --danger:#b42318; --danger-bg:#ffebe9; }
-    *,*::before,*::after { box-sizing:border-box; }
-    html { scroll-behavior:smooth; }
-    body { min-width:320px; margin:0; color:var(--text); background:var(--page); font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; line-height:1.55; transition:background-color .2s,color .2s; }
-    button,input { font:inherit; } a { color:var(--primary); } a:hover { color:var(--primary-dark); }
-    .site-header { position:relative; overflow:hidden; color:#fff; background:linear-gradient(120deg,#075cad,#0b7bdd 54%,#40a9ee); }
-    .site-header::after { position:absolute; inset:auto -8rem -11rem auto; width:27rem; height:27rem; border:4rem solid rgb(255 255 255 / 8%); border-radius:50%; content:""; pointer-events:none; }
-    .header-inner,main,.footer-inner { width:min(1120px,calc(100% - 2rem)); margin:0 auto; }
-    .header-inner { display:flex; align-items:center; justify-content:space-between; min-height:4.75rem; gap:1rem; }
-    .brand { color:inherit; font-size:1.35rem; font-weight:800; letter-spacing:-.04em; text-decoration:none; }
-    .theme-toggle { display:inline-grid; width:2.7rem; height:2.7rem; place-items:center; color:inherit; background:rgb(255 255 255 / 14%); border:1px solid rgb(255 255 255 / 35%); border-radius:50%; cursor:pointer; font-size:1.2rem; }
-    .theme-toggle:hover,.theme-toggle:focus-visible { background:rgb(255 255 255 / 25%); }
-    main { padding:clamp(2.5rem,6vw,5rem) 0; } .hero { max-width:760px; margin:0 auto 2.5rem; text-align:center; }
-    .eyebrow { margin:0 0 .7rem; color:var(--primary); font-size:.82rem; font-weight:800; letter-spacing:.1em; text-transform:uppercase; }
-    h1,h2,h3,p { margin-top:0; } h1 { margin-bottom:.9rem; font-size:clamp(2.25rem,5vw,4.2rem); line-height:1.05; letter-spacing:-.055em; } h2 { font-size:clamp(1.4rem,3vw,1.8rem); line-height:1.2; letter-spacing:-.025em; }
-    .hero p:last-child { max-width:630px; margin:0 auto; color:var(--muted); font-size:clamp(1.05rem,2vw,1.25rem); }
-    .controls { display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:.75rem; margin-bottom:1.5rem; }
-    .animal-tab { display:inline-flex; align-items:center; justify-content:center; min-height:3rem; padding:.6rem 1.2rem; color:var(--text); background:var(--surface); border:1px solid var(--border); border-radius:.75rem; cursor:pointer; font-weight:750; transition:border-color .2s,background-color .2s,color .2s,transform .2s; }
-    .animal-tab:hover { transform:translateY(-1px); border-color:var(--primary); } .animal-tab.active { color:#fff; background:var(--primary); border-color:var(--primary); }
-    .notice,.tips,.legend,.search-panel { margin-bottom:1.5rem; border:1px solid var(--border); border-radius:1rem; box-shadow:var(--shadow); }
-    .notice { padding:1rem 1.15rem; color:#724b00; background:#fff8df; border-color:#f1d789; } .notice p { margin:0; }
-    .tips { padding:clamp(1.25rem,4vw,2rem); background:var(--soft); } .tips h2,.legend h2 { margin-bottom:.6rem; } .tips-intro { margin-bottom:.9rem; }
-    .tips-list { padding-left:1.25rem; margin:0; color:var(--muted); } .tips-list li+li { margin-top:.6rem; }
-    .legend { padding:1.25rem; background:var(--surface); text-align:center; } .legend h2 { font-size:1.15rem; } .legend-items { display:flex; flex-wrap:wrap; justify-content:center; gap:.65rem; }
-    .badge { display:inline-flex; align-items:center; min-height:1.85rem; padding:.2rem .65rem; border-radius:999px; font-size:.8rem; font-weight:800; line-height:1; white-space:nowrap; }
-    .badge.safe { color:var(--safe); background:var(--safe-bg); } .badge.caution { color:var(--caution); background:var(--caution-bg); } .badge.dangerous { color:var(--danger); background:var(--danger-bg); }
-    .search-panel { padding:.8rem; background:var(--surface); } .search-label { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
-    #food-search { display:block; width:100%; min-height:3rem; padding:.65rem .85rem; color:var(--text); background:transparent; border:1px solid var(--border); border-radius:.65rem; outline:0; }
-    #food-search:focus { border-color:var(--primary); box-shadow:0 0 0 3px rgb(9 109 210 / 15%); } .results-summary { margin:1.2rem 0 1rem; color:var(--muted); font-size:.95rem; }
-    .posts-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(min(100%,305px),1fr)); gap:1rem; }
-    .post { display:flex; flex-direction:column; min-height:100%; padding:1.4rem; background:var(--surface); border:1px solid var(--border); border-top:4px solid var(--border); border-radius:1rem; box-shadow:0 3px 12px rgb(23 33 43 / 5%); transition:box-shadow .2s,transform .2s; }
-    .post:hover { box-shadow:var(--shadow); transform:translateY(-2px); } .post.safe { border-top-color:var(--safe); } .post.caution { border-top-color:#e0aa00; } .post.dangerous { border-top-color:var(--danger); }
-    .post h2 { margin-bottom:.8rem; font-size:1.35rem; } .post p { margin-bottom:1rem; color:var(--muted); } .post-meta { display:flex; flex-wrap:wrap; gap:.4rem; margin-top:auto; }
-    .animal-badge { color:#145a98; background:#e3f1ff; } .animal-badge.cat { color:#a02d64; background:#ffe7f1; } .source { margin:.15rem 0 0; font-size:.83rem; }
-    .empty-state { grid-column:1/-1; padding:2.5rem 1rem; color:var(--muted); background:var(--surface); border:1px dashed var(--border); border-radius:1rem; text-align:center; }
-    footer { padding:2rem 0; color:var(--muted); background:var(--surface); border-top:1px solid var(--border); font-size:.92rem; text-align:center; } footer p { margin:0; }
-    body.dark { color-scheme:dark; --page:#10171f; --surface:#19232d; --soft:#182b3c; --text:#edf3f8; --muted:#b4c1cc; --border:#314251; --primary:#55adff; --primary-dark:#9bceff; --shadow:0 10px 30px rgb(0 0 0 / 25%); --safe:#76d9a4; --safe-bg:#143b29; --caution:#ffdb72; --caution-bg:#493b0e; --danger:#ffaaa2; --danger-bg:#4b201e; }
-    body.dark .notice { color:#ffe08a; background:#45380e; border-color:#7f6819; } body.dark .animal-badge { color:#9bd0ff; background:#133d60; } body.dark .animal-badge.cat { color:#ffc0da; background:#56243e; }
-    @media (max-width:560px) { .header-inner,main,.footer-inner { width:min(100% - 1.25rem,1120px); } .header-inner { min-height:4.25rem; } .animal-tab { flex:1 1 0; } .notice,.tips,.legend { border-radius:.8rem; } .post { padding:1.15rem; } }
-    @media (prefers-reduced-motion:reduce) { *,*::before,*::after { scroll-behavior:auto!important; transition-duration:.01ms!important; } }
-  </style>
+  <meta property="og:url" content="https://www.nekrmte.cz/">
+  <meta property="og:locale" content="cs_CZ">
+  <meta name="twitter:card" content="summary">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
+  <title>Nekrmte.cz – když zvíře snědlo něco nevhodného</title>
+  <script src="theme.js"></script>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
 </head>
 <body>
+  <a class="skip-link" href="#vyhledavani">Přeskočit na vyhledávání</a>
   <header class="site-header">
     <div class="header-inner">
-      <a class="brand" href="#obsah" aria-label="Nekrmte.cz, přejít na obsah">Nekrmte.cz</a>
-      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Zapnout tmavý režim" title="Změnit barevný režim">🌙</button>
+      <a class="brand" href="/" aria-label="Nekrmte.cz, domovská stránka"><span class="brand-mark" aria-hidden="true">✦</span>Nekrmte.cz</a>
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Zapnout tmavý režim" title="Změnit barevný režim"><span aria-hidden="true">◐</span><span class="visually-hidden">Změnit barevný režim</span></button>
     </div>
   </header>
-  <main id="obsah">
+  <main>
     <section class="hero" aria-labelledby="page-title">
-      <p class="eyebrow">Průvodce bezpečným krmením</p>
-      <h1 id="page-title">Co nesmí zvířata jíst?</h1>
-      <p>Rychlý přehled potravin pro psy a kočky. U každé najdete, zda je bezpečná, vyžaduje opatrnost, nebo je nebezpečná.</p>
+      <p class="eyebrow">Rychlá orientace při požití</p>
+      <h1 id="page-title">Co snědlo vaše zvíře?</h1>
+      <p>Vyberte zvíře a napište potravinu. Přehled obsahuje pouze vybrané, ověřené položky — nenahrazuje veterinární vyšetření.</p>
+      <a class="hero-link" href="#vyhledavani">Vyhledat potravinu <span aria-hidden="true">↓</span></a>
     </section>
-    <div class="controls" role="tablist" aria-label="Vyberte zvíře">
-      <button class="animal-tab" id="tab-pes" type="button" role="tab" aria-controls="posts-list" aria-selected="true" data-category="pes">🐕 Pes</button>
-      <button class="animal-tab" id="tab-kocka" type="button" role="tab" aria-controls="posts-list" aria-selected="false" data-category="kocka">🐈 Kočka</button>
-    </div>
-    <aside class="notice" aria-label="Důležité upozornění"><p><strong>Varování:</strong> Tento přehled nenahrazuje veterinární radu. Pokud zvíře snědlo potenciálně nebezpečnou potravinu nebo má potíže, kontaktujte veterináře.</p></aside>
-    <section class="tips" id="tips" aria-labelledby="tips-title"></section>
-    <section class="legend" aria-labelledby="legend-title">
-      <h2 id="legend-title">Legenda</h2>
-      <div class="legend-items"><span class="badge safe">Bezpečné</span><span class="badge caution">S opatrností</span><span class="badge dangerous">Nebezpečné</span></div>
+    <aside class="emergency" aria-labelledby="emergency-title">
+      <div class="emergency-icon" aria-hidden="true">!</div>
+      <div>
+        <p class="eyebrow">Nejdřív bezpečí</p>
+        <h2 id="emergency-title">Při potížích nebo požití známého toxinu volejte hned veterináře.</h2>
+        <p>Pokud zvíře kolabuje, má záchvat, potíže s dýcháním nebo opakovaně zvrací, jeďte na veterinární pohotovost. <strong>Bez pokynu veterináře nevyvolávejte zvracení a nepodávejte domácí „protijedy“.</strong></p>
+      </div>
+    </aside>
+    <section class="lookup" id="vyhledavani" aria-labelledby="lookup-title">
+      <div class="lookup-heading"><p class="eyebrow">Krok 1 a 2</p><h2 id="lookup-title">Vyberte zvíře a potravinu</h2></div>
+      <div class="animal-switch" role="group" aria-label="Vyberte zvíře">
+        <button class="animal-button is-active" id="animal-dog" type="button" aria-pressed="true" data-animal="dog"><span aria-hidden="true">🐕</span> Pes</button>
+        <button class="animal-button" id="animal-cat" type="button" aria-pressed="false" data-animal="cat"><span aria-hidden="true">🐈</span> Kočka</button>
+      </div>
+      <label class="search-label" for="food-search">Co zvíře snědlo?</label>
+      <div class="search-field"><span aria-hidden="true">⌕</span><input id="food-search" type="search" autocomplete="off" spellcheck="false" placeholder="Např. čokoláda, rozinky, žvýkačka…"></div>
+      <p class="search-help">Hledání rozumí i běžným názvům, například „kakao“, „sladkosti“ nebo „hrozny“.</p>
     </section>
-    <section class="search-panel" aria-label="Vyhledávání potravin">
-      <label class="search-label" for="food-search">Hledat potravinu</label>
-      <input id="food-search" type="search" autocomplete="off" placeholder="Hledat potravinu, například hrozny nebo mrkev">
+    <section class="results" aria-labelledby="results-title">
+      <div class="results-heading"><div><p class="eyebrow">Výsledek</p><h2 id="results-title">Vybrané potraviny pro psa</h2></div><p class="results-summary" id="results-summary" aria-live="polite"></p></div>
+      <div class="risk-key" aria-label="Význam úrovní rizika"><span class="badge danger">Jednejte ihned</span><span class="badge caution">Riziko / opatrnost</span><span class="badge safe">Obvykle netoxické</span></div>
+      <div class="food-grid" id="foods"></div>
     </section>
-    <p class="results-summary" id="results-summary" aria-live="polite"></p>
-    <section class="posts-grid" id="posts-list" role="tabpanel" aria-labelledby="tab-pes"></section>
+    <section class="scope" aria-labelledby="scope-title">
+      <p class="eyebrow">Rozsah a zdroje</p>
+      <h2 id="scope-title">Nejde o úplnou databázi</h2>
+      <p>Tento výběr pomáhá rozpoznat častá rizika, ne určit bezpečnou dávku. Skutečné riziko závisí mimo jiné na množství, hmotnosti zvířete, složení výrobku, čase od požití a zdravotním stavu.</p>
+      <ul><li>Každá karta uvádí zdroj, datum kontroly a sílu podkladů.</li><li>U neznámé potraviny, léku, chemikálie nebo rostliny kontaktujte veterináře i tehdy, když zde výsledek nenajdete.</li><li>Připravte obal výrobku, odhad množství, čas požití, hmotnost zvířete a pozorované příznaky.</li></ul>
+    </section>
   </main>
-  <footer><div class="footer-inner"><p>© Nekrmte.cz. Všechna práva vyhrazena. · <a href="https://github.com/iksdeecz/nekrmte.cz" target="_blank" rel="noopener noreferrer">GitHub</a></p></div></footer>
-  <script>
-    (() => {
-      "use strict";
-      const posts = [
-        {title:"Hrozny a rozinky",category:"oba",safety:"nebezpečné",text:"Hrozny a rozinky mohou u psů a koček způsobit akutní selhání ledvin. I malé množství může být nebezpečné, proto se jim úplně vyhněte.",source:["ASPCA: Grapes and Raisins","https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/grapes-rhubarb"]},
-        {title:"Avokádo",category:"oba",safety:"nebezpečné",text:"Avokádo obsahuje persin a může způsobit zvracení nebo průjem. Nedávejte zvířatům dužinu, pecku ani žádné výrobky z avokáda.",source:["PetMD: Avocado Toxic to Dogs","https://www.petmd.com/dog/nutrition/evr_dg_avocado_toxic_to_dogs"]},
-        {title:"Cibule a česnek",category:"oba",safety:"nebezpečné",text:"Cibule, pórek a česnek mohou poškozovat červené krvinky a způsobit anémii. Kočky jsou obzvlášť citlivé; vyhněte se jim úplně."},
-        {title:"Žvýkačky a sladkosti s xylitolem",category:"pes",safety:"nebezpečné",text:"Xylitol může u psů vyvolat prudký pokles hladiny cukru v krvi, slabost, poruchy koordinace nebo záchvaty. I malé množství je nebezpečné."},
-        {title:"Meloun",category:"pes",safety:"bezpečné",text:"Meloun může být pro psy osvěžujícím pamlskem. Podávejte pouze dužinu bez slupky a semen, které mohou způsobit zažívací potíže."},
-        {title:"Zelenina",category:"pes",safety:"bezpečné",text:"Některé druhy zeleniny, například římský nebo ledový salát, mohou být pro psy vhodným pamlskem. Vyhněte se však cibulové zelenině a nepodávejte ochucené pokrmy."},
-        {title:"Ovesná kaše",category:"pes",safety:"s opatrností",text:"Neochucená vařená ovesná kaše může být pro psa v malém množství vhodná. Vysoký obsah vlákniny ale může vyvolat plynatost, zvracení nebo průjem."},
-        {title:"Olivy",category:"pes",safety:"s opatrností",text:"Olivy samy o sobě nejsou pro psy toxické, ale dávejte jen malé množství bez pecek. Vyhněte se nakládaným a slaným olivám i vysokému obsahu tuku."},
-        {title:"Hlíva upchaná",category:"kocka",safety:"nebezpečné",text:"Hlíva upchaná může u koček vyvolat závažné zdravotní potíže včetně akutního selhání ledvin. Nedovolte kočce tuto rostlinu pozřít."},
-        {title:"Vánoční koláče a vanilka",category:"pes",safety:"nebezpečné",text:"Vánoční pečivo často obsahuje hrozinky, čokoládu nebo xylitol. Tyto složky mohou být pro psy nebezpečné, proto jim lidské vánoční sladkosti nedávejte."},
-        {title:"Makadamové ořechy",category:"pes",safety:"nebezpečné",text:"Makadamové ořechy mohou u psů vyvolat slabost, zvracení, horečku a třes. Vyhněte se jim úplně."},
-        {title:"Levandule",category:"kocka",safety:"nebezpečné",text:"Levandule může být pro kočky toxická a vyvolat zvracení, nechutenství nebo letargii. Zvláštní opatrnost je nutná u koncentrovaných olejů."},
-        {title:"Chřest",category:"kocka",safety:"nebezpečné",text:"Chřest může u koček způsobit zažívací potíže, například zvracení a průjem. Nedávejte jej kočce jako pamlsek."},
-        {title:"Syrové těsto s droždím",category:"pes",safety:"nebezpečné",text:"Syrové kynuté těsto může v žaludku dále kynout a vytvořit alkohol. Může způsobit nebezpečné nadmutí a otravu alkoholem."},
-        {title:"Tis",category:"oba",safety:"nebezpečné",text:"Tis je vysoce toxická rostlina. Všechny jeho části mohou u psů i koček způsobit křeče, srdeční potíže nebo smrt."},
-        {title:"Banány",category:"kocka",safety:"bezpečné",text:"Banán může být pro kočku příležitostným pamlskem v malém množství. Podávejte jej bez slupky; kvůli obsahu cukru není vhodný pravidelně."},
-        {title:"Mrkev",category:"kocka",safety:"bezpečné",text:"Malé kousky vařené nebo syrové mrkve mohou kočky jíst. Vždy je nakrájejte tak, aby nehrozilo zaskočení."},
-        {title:"Rajčata",category:"kocka",safety:"s opatrností",text:"Zralá červená rajčata bez listů a stonků bývají v malém množství obvykle bezpečná. Zelené části rostliny jsou však toxické."},
-        {title:"Brambory",category:"kocka",safety:"s opatrností",text:"Syrové brambory obsahují solanin a pro kočky nejsou vhodné. Malé množství vařených, neochucených brambor může být bezpečné, nemělo by ale tvořit pravidelnou část stravy."},
-        {title:"Zelené fazole",category:"kocka",safety:"bezpečné",text:"Vařené zelené fazole bez soli a koření lze podávat v malém množství. Syrové fazole mohou způsobit zažívací potíže."},
-        {title:"Špenát",category:"pes",safety:"s opatrností",text:"Špenát obsahuje oxaláty, které mohou při časté konzumaci zatěžovat ledviny. Občasný malý kousek pravděpodobně nevadí, pravidelně jej ale nepodávejte."},
-        {title:"Ořechy",category:"pes",safety:"nebezpečné",text:"Některé ořechy nejsou přímo toxické, ale jejich vysoký obsah tuku může způsobit zažívací potíže nebo zánět slinivky. Makadamové ořechy jsou pro psy toxické."},
-        {title:"Jablka",category:"kocka",safety:"bezpečné",text:"Kočky mohou jíst malé kousky jablka bez jadřince, stonku a semen. Semena obsahují látky, kterým je lepší se vyhnout."}
-      ];
-      const tips = {
-        pes:{intro:"Když sdílíte jídlo se psy, pamatujte na několik důležitých zásad:",items:["Než psovi dáte nové jídlo, poraďte se s veterinářem, zejména pokud užívá léky nebo má zdravotní potíže.","Nové potraviny podávejte po malých dávkách a sledujte, zda se neobjeví negativní příznaky.","Pamlsky a doplňkové potraviny by neměly tvořit více než 10 % denního příjmu.","Vždy odstraňte pecky, semena, slupky a další části, kterými by se pes mohl udusit nebo které by mohly ucpat trávicí trakt.","Nepodávejte slané, sladké, kořeněné ani mastné lidské pokrmy. Mohou obsahovat škodlivé látky, například cibuli, česnek nebo xylitol.","Příliš tučná jídla mohou vyvolat zažívací potíže nebo zánět slinivky."]},
-        kocka:{intro:"Když sdílíte jídlo s kočkami, pamatujte na několik důležitých zásad:",items:["Než kočce dáte nové jídlo, poraďte se s veterinářem, zejména pokud užívá léky nebo má zdravotní potíže.","Nové potraviny podávejte po malých dávkách a sledujte, zda se neobjeví negativní příznaky.","Pamlsky a doplňkové potraviny by neměly tvořit více než 10 % denního příjmu.","Vždy odstraňte pecky, semena, slupky a další části, kterými by se kočka mohla udusit nebo které by mohly ucpat trávicí trakt.","Nepodávejte slané, sladké, kořeněné ani mastné lidské pokrmy. Mohou obsahovat škodlivé látky, například cibuli, česnek nebo xylitol.","Kočky jsou masožravci; lidské přílohy a průmyslově zpracované potraviny proto nemají tvořit významnou část jejich jídelníčku."]}
-      };
-      const labels={"bezpečné":"Bezpečné","s opatrností":"S opatrností","nebezpečné":"Nebezpečné"};
-      const classes={"bezpečné":"safe","s opatrností":"caution","nebezpečné":"dangerous"};
-      const state={category:"pes",query:""};
-      const postsList=document.getElementById("posts-list");
-      const summary=document.getElementById("results-summary");
-      const tipsElement=document.getElementById("tips");
-      const tabs=[...document.querySelectorAll(".animal-tab")];
-      const search=document.getElementById("food-search");
-      const themeToggle=document.getElementById("theme-toggle");
-      function makeBadge(text,className) { const badge=document.createElement("span"); badge.className=`badge ${className}`; badge.textContent=text; return badge; }
-      function renderTips() {
-        const current=tips[state.category]; tipsElement.replaceChildren();
-        const title=document.createElement("h2"); title.id="tips-title"; title.textContent="Tipy";
-        const intro=document.createElement("p"); intro.className="tips-intro"; const strong=document.createElement("strong"); strong.textContent=current.intro; intro.append(strong);
-        const list=document.createElement("ul"); list.className="tips-list";
-        current.items.forEach(item=>{ const li=document.createElement("li"); li.textContent=item; list.append(li); });
-        tipsElement.append(title,intro,list);
-      }
-      function renderPosts() {
-        const query=state.query.trim().toLocaleLowerCase("cs");
-        const filtered=posts.filter(post=>post.category===state.category||post.category==="oba").filter(post=>!query||`${post.title} ${post.text}`.toLocaleLowerCase("cs").includes(query)).sort((a,b)=>a.title.localeCompare(b.title,"cs"));
-        postsList.replaceChildren(); summary.textContent=filtered.length===1?"Nalezena 1 potravina.":`Nalezeno ${filtered.length} potravin.`;
-        if (!filtered.length) { const empty=document.createElement("p"); empty.className="empty-state"; empty.textContent="Pro tento výraz jsme nic nenašli. Zkuste jiné označení potraviny."; postsList.append(empty); return; }
-        filtered.forEach(post=>{
-          const article=document.createElement("article"); article.className=`post ${classes[post.safety]}`;
-          const title=document.createElement("h2"); title.textContent=post.title;
-          const text=document.createElement("p"); text.textContent=post.text;
-          const meta=document.createElement("div"); meta.className="post-meta"; meta.append(makeBadge(labels[post.safety],classes[post.safety]));
-          if (post.category==="oba"||post.category==="pes") meta.append(makeBadge("Pes","animal-badge"));
-          if (post.category==="oba"||post.category==="kocka") meta.append(makeBadge("Kočka","animal-badge cat"));
-          article.append(title,text,meta);
-          if (post.source) { const source=document.createElement("p"); source.className="source"; source.append("Zdroj: "); const link=document.createElement("a"); link.href=post.source[1]; link.target="_blank"; link.rel="noopener noreferrer"; link.textContent=post.source[0]; source.append(link); article.append(source); }
-          postsList.append(article);
-        });
-      }
-      function setCategory(category) {
-        state.category=category;
-        tabs.forEach(tab=>{ const active=tab.dataset.category===category; tab.classList.toggle("active",active); tab.setAttribute("aria-selected",String(active)); });
-        postsList.setAttribute("aria-labelledby",`tab-${category}`); search.value=""; state.query=""; renderTips(); renderPosts();
-      }
-      tabs.forEach(tab=>tab.addEventListener("click",()=>setCategory(tab.dataset.category)));
-      search.addEventListener("input",()=>{ state.query=search.value; renderPosts(); });
-      const savedTheme=localStorage.getItem("nekrmte-theme");
-      const prefersDark=window.matchMedia("(prefers-color-scheme: dark)").matches;
-      function setTheme(isDark) { document.body.classList.toggle("dark",isDark); themeToggle.textContent=isDark?"☀️":"🌙"; themeToggle.setAttribute("aria-label",isDark?"Zapnout světlý režim":"Zapnout tmavý režim"); }
-      setTheme(savedTheme?savedTheme==="dark":prefersDark);
-      themeToggle.addEventListener("click",()=>{ const isDark=!document.body.classList.contains("dark"); setTheme(isDark); localStorage.setItem("nekrmte-theme",isDark?"dark":"light"); });
-      renderTips(); renderPosts();
-    })();
-  </script>
+  <footer><div class="footer-inner"><p>© Nekrmte.cz · Informace byly zkontrolovány 7. 9. 2026. · <a href="https://github.com/iksdeecz/nekrmte.cz" target="_blank" rel="noopener noreferrer">GitHub</a></p></div></footer>
 </body>
 </html>
