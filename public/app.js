@@ -237,4 +237,4 @@ import {
 
   // Export pro případné ladění (ne pro UI).
   window.__nekrmte = { filterFoods, normalise, resolveFood };
-});
+})();
