@@ -1,6 +1,6 @@
 // Build: single source data/foods.json -> index.html (embedded JSON + static no-JS cards).
 // Usage: node scripts/build.mjs [--check]  (--check fails if index.html is stale)
-import { readFileSync, writeFileSync } from "node:fs";
+import { readFileSync, writeFileSync, copyFileSync, mkdirSync } from "node:fs";
 import { resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -95,7 +95,72 @@ if (process.argv.includes("--check")) {
   } else {
     console.log("index.html je aktuální.");
   }
+  checkPublicDir(root);
 } else {
   writeFileSync(htmlPath, next);
   console.log(`Vygenerováno: ${data.foods.length} položek, statické karty pro psa.`);
+  syncPublicDir(root);
+}
+
+// public/ je jediný adresář, který Cloudflare Workers nahrává (wrangler.jsonc
+// -> assets.directory). Bez toho by při assets.directory="." nahrál i
+// node_modules (workerd ~129 MiB) a .git a build by padl na limitu 25 MiB.
+function syncPublicDir(rootDir) {
+  const files = [
+    "index.html",
+    "app.js",
+    "styles.css",
+    "theme.js",
+    "favicon.svg",
+    "og-image.svg",
+    "robots.txt",
+    "sitemap.xml",
+    "lib/search.mjs",
+  ];
+  for (const f of files) {
+    const src = resolve(rootDir, f);
+    const dest = resolve(rootDir, "public", f);
+    mkdirSync(dirname(dest), { recursive: true });
+    copyFileSync(src, dest);
+  }
+  console.log(`Zkopírováno do public/: ${files.length} souborů.`);
+}
+
+function checkPublicDir(rootDir) {
+  const files = [
+    "index.html",
+    "app.js",
+    "styles.css",
+    "theme.js",
+    "favicon.svg",
+    "og-image.svg",
+    "robots.txt",
+    "sitemap.xml",
+    "lib/search.mjs",
+  ];
+  const stale = [];
+  for (const f of files) {
+    const src = resolve(rootDir, f);
+    const dest = resolve(rootDir, "public", f);
+    let a, b;
+    try {
+      a = readFileSync(src, "utf8");
+    } catch {
+      stale.push(`${f} (chybí zdroj)`);
+      continue;
+    }
+    try {
+      b = readFileSync(dest, "utf8");
+    } catch {
+      stale.push(`${f} (chybí v public/)`);
+      continue;
+    }
+    if (a !== b) stale.push(f);
+  }
+  if (stale.length) {
+    console.error(`public/ je zastaralé vůči kořenu (spusťte npm run build): ${stale.join(", ")}`);
+    process.exit(1);
+  } else {
+    console.log("public/ je aktuální.");
+  }
 }
