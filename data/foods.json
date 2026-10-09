@@ -1,0 +1,526 @@
+{
+  "meta": {
+    "reviewNote": "Redakční kontrola veřejných zdrojů k uvedenému datu u každé položky. Nejde o individuální veterinární atestaci. Viz docs/METODIKA.md.",
+    "methodology": "docs/METODIKA.md"
+  },
+  "sourceCatalog": {
+    "merckChocolate": {
+      "label": "Merck Veterinary Manual · Chocolate Toxicosis",
+      "url": "https://www.merckvetmanual.com/toxicology/food-hazards/chocolate-toxicosis-in-animals"
+    },
+    "merckGrapes": {
+      "label": "Merck Veterinary Manual · Grape, Raisin and Tamarind Toxicosis in Dogs",
+      "url": "https://www.merckvetmanual.com/toxicology/food-hazards/grape-raisin-and-tamarind-vitis-spp-tamarindus-spp-toxicosis-in-dogs"
+    },
+    "merckFoods": {
+      "label": "Merck Veterinary Manual · Food Hazards",
+      "url": "https://www.merckvetmanual.com/special-pet-topics/poisoning/food-hazards"
+    },
+    "aspca": {
+      "label": "ASPCA · People Foods to Avoid Feeding Your Pets",
+      "url": "https://www.aspca.org/pet-care/aspca-poison-control/people-foods-avoid-feeding-your-pets"
+    },
+    "cornellToxins": {
+      "label": "Cornell University · Small Animal Toxins",
+      "url": "https://www.vet.cornell.edu/hospitals/pharmacy/consumer-clinical-care-guidelines-animals/small-animal-toxins"
+    },
+    "cornellCats": {
+      "label": "Cornell University · Feeding Your Cat",
+      "url": "https://www.vet.cornell.edu/departments-centers-and-institutes/cornell-feline-health-center/health-information/feline-health-topics/feeding-your-cat"
+    },
+    "cornellGrapes": {
+      "label": "Cornell University · Grape and Raisin Toxicity (dogs; Ribes currants distinguished)",
+      "url": "https://www.vet.cornell.edu/departments-centers-and-institutes/riney-canine-health-center/canine-health-information/grape-and-raisin-toxicity"
+    },
+    "poisonHelpAvocado": {
+      "label": "Pet Poison Helpline · Avocado (dogs, cats)",
+      "url": "https://www.petpoisonhelpline.com/poison/avocado/"
+    }
+  },
+  "foods": [
+    {
+      "id": "chocolate",
+      "name": "Čokoláda a kakao",
+      "aliases": [
+        "čokoláda",
+        "kakao",
+        "kakaový prášek",
+        "kakaové boby",
+        "hořká čokoláda",
+        "mléčná čokoláda",
+        "brownie",
+        "theobromin"
+      ],
+      "animals": [
+        "dog",
+        "cat"
+      ],
+      "level": "danger",
+      "riskType": "toxické",
+      "evidence": "dobře doloženo u psů i koček",
+      "principle": "theobromin a kofein",
+      "summary": "Tmavá, pečicí čokoláda a kakao jsou koncentrovanější než mléčná; riziko závisí na druhu výrobku a množství. Přesnou bezpečnou dávku nelze z tohoto přehledu určit.",
+      "signs": "zvracení, neklid, třes, zrychlený nebo nepravidelný tep, záchvaty",
+      "action": "Volejte veterináři ihned a mějte po ruce obal, druh čokolády, množství, čas požití a hmotnost zvířete. Při záchvatu, kolapsu nebo potížích s dýcháním jeďte na pohotovost.",
+      "sources": [
+        "merckChocolate"
+      ],
+      "reviewedAt": "2026-10-09",
+      "vetReview": null
+    },
+    {
+      "id": "caffeine",
+      "name": "Káva, čaj a kofein",
+      "aliases": [
+        "káva",
+        "kafe",
+        "espresso",
+        "kávová zrna",
+        "kávová sedlina",
+        "čaj s kofeinem",
+        "černý čaj",
+        "zelený čaj",
+        "matcha",
+        "energetický nápoj",
+        "energy drink",
+        "guarana",
+        "kofein",
+        "thein",
+        "kofeinové tablety"
+      ],
+      "animals": [
+        "dog",
+        "cat"
+      ],
+      "level": "danger",
+      "riskType": "toxické",
+      "evidence": "dobře doloženo u psů i koček",
+      "principle": "kofein (methylxanthin, včetně theinu)",
+      "summary": "Kofein je stimulant; koncentrované zdroje jako sedlina, zrna, tablety a energetické nápoje představují vyšší riziko. Kolové a jiné míchané nápoje posuzujte vždy podle skutečného složení.",
+      "signs": "neklid, zvracení, zrychlený tep, třes, záchvaty",
+      "action": "Volejte veterináři ihned, bez čekání na příznaky; vezměte s sebou obal nebo informaci o koncentraci. Při záchvatu nebo kolapsu jeďte na pohotovost.",
+      "sources": [
+        "cornellToxins"
+      ],
+      "reviewedAt": "2026-10-09",
+      "vetReview": null
+    },
+    {
+      "id": "alcohol",
+      "name": "Alkohol",
+      "aliases": [
+        "alkohol",
+        "etanol",
+        "pivo",
+        "víno",
+        "likér",
+        "destilát",
+        "panák",
+        "alkoholický nápoj"
+      ],
+      "animals": [
+        "dog",
+        "cat"
+      ],
+      "level": "danger",
+      "riskType": "toxické",
+      "evidence": "dobře doloženo u psů i koček",
+      "principle": "etanol",
+      "summary": "Alkohol se rychle vstřebává. Rizikové mohou být také výrobky a potraviny obsahující alkohol.",
+      "signs": "zvracení, nekoordinovanost, útlum, potíže s dýcháním, třes, kóma",
+      "action": "Volejte veterináři ihned; při poruše vědomí, křečích či potížích s dýcháním jeďte na pohotovost.",
+      "sources": [
+        "aspca"
+      ],
+      "reviewedAt": "2026-10-09",
+      "vetReview": null
+    },
+    {
+      "id": "allium",
+      "name": "Cibule, česnek a pažitka",
+      "aliases": [
+        "cibule",
+        "česnek",
+        "medvědí česnek",
+        "pórek",
+        "šalotka",
+        "jarní cibulka",
+        "pažitka",
+        "cibulový prášek",
+        "česnekový prášek"
+      ],
+      "animals": [
+        "dog",
+        "cat"
+      ],
+      "level": "danger",
+      "riskType": "toxické",
+      "evidence": "dobře doloženo u psů i koček",
+      "principle": "sloučeniny rodu Allium poškozující červené krvinky",
+      "summary": "Rizikové jsou čerstvé, sušené i práškové formy a ochucená hotová jídla. Kočky jsou citlivější, riziko však existuje i u psů.",
+      "signs": "zažívací potíže, únava, bledé sliznice, zrychlené dýchání nebo tep",
+      "action": "Volejte veterináři ihned, zvlášť po požití koncentrované nebo neznámé dávky; příznaky chudokrevnosti se mohou objevit až později.",
+      "sources": [
+        "aspca"
+      ],
+      "reviewedAt": "2026-10-09",
+      "vetReview": null
+    },
+    {
+      "id": "grapes",
+      "name": "Hrozny, rozinky a tamarind",
+      "aliases": [
+        "hrozny",
+        "hrozno",
+        "rozinky",
+        "rozinka",
+        "vinné hrozny",
+        "sušené hrozny",
+        "sultánky",
+        "korintky",
+        "tamarind"
+      ],
+      "animals": [
+        "dog",
+        "cat"
+      ],
+      "level": "danger",
+      "riskType": "toxické u psů / nejasné u koček",
+      "evidence": "dobře doloženo u psů",
+      "principle": "pravděpodobně kyselina vinná; obsah se mezi plody liší",
+      "summary": "U psů mohou hrozny, rozinky a tamarind vést k akutnímu poškození ledvin. Nelze určit bezpečné množství. Pravý rybíz rodu Ribes (červený, černý) není totéž co tzv. Zante currants, což jsou drobné sušené hrozny — rybíz proto do této karty nepatří.",
+      "signs": "zvracení nebo průjem, letargie, nechutenství, žízeň; následně potíže s ledvinami",
+      "action": "U psa volejte veterináři ihned, i když snědl malé množství a zatím nemá příznaky.",
+      "sources": [
+        "merckGrapes",
+        "cornellGrapes"
+      ],
+      "reviewedAt": "2026-10-09",
+      "vetReview": null,
+      "byAnimal": {
+        "cat": {
+          "level": "caution",
+          "riskType": "toxické u psů / nejasné u koček",
+          "evidence": "omezené podklady u koček",
+          "summary": "Závažné případy jsou dobře popsány u psů. U koček existují ojedinělá hlášení, ale nejsou publikované série případů; neznamená to, že je požití bezpečné.",
+          "signs": "zvracení, průjem, letargie nebo jiné potíže po požití",
+          "action": "Ověřte množství a čas požití a volejte veterináři; postup se určuje individuálně, při potížích jeďte na pohotovost."
+        }
+      }
+    },
+    {
+      "id": "xylitol",
+      "name": "Xylitol — zkontrolujte složení výrobku",
+      "aliases": [
+        "xylitol",
+        "xylit",
+        "březový cukr",
+        "E967"
+      ],
+      "animals": [
+        "dog",
+        "cat"
+      ],
+      "level": "danger",
+      "riskType": "toxické u psů / nejasné u koček",
+      "evidence": "dobře doloženo u psů",
+      "principle": "xylitol (E967)",
+      "summary": "Xylitol se může skrývat ve žvýkačkách bez cukru, bonbonech, pečivu, zubních pastách a některých ořechových krémech či proteinových tyčinkách. Obecný název výrobku (např. žvýkačka, arašídové máslo) sám o obsahu xylitolu nerozhoduje — vždy čtěte složení. U psů může xylitol rychle vyvolat hypoglykemii a ve vyšších dávkách poškození jater.",
+      "signs": "zvracení, slabost, nekoordinovanost, útlum, záchvaty",
+      "action": "U psa volejte veterináři okamžitě, nečekejte na příznaky a bez jeho pokynu nevyvolávejte zvracení. Připravte přesný název výrobku, složení, množství a čas požití.",
+      "sources": [
+        "merckFoods"
+      ],
+      "reviewedAt": "2026-10-09",
+      "vetReview": null,
+      "byAnimal": {
+        "cat": {
+          "level": "caution",
+          "riskType": "toxické u psů / nejasné u koček",
+          "evidence": "nejasné specifické riziko u koček",
+          "summary": "Závažný účinek xylitolu je doložen především u psů. U kočky může výrobek obsahovat i jiné problémové složky, proto vždy ověřte složení.",
+          "signs": "záleží na výrobku, množství a dalších složkách; po požití sledujte zvracení, apatii a nechutenství",
+          "action": "Ověřte název a složení výrobku a volejte veterináři; neodhadujte riziko jen podle toho, že kočka zatím vypadá v pořádku.",
+          "sources": [
+            "cornellToxins"
+          ]
+        }
+      }
+    },
+    {
+      "id": "yeast-dough",
+      "name": "Syrové kynuté těsto",
+      "aliases": [
+        "kynuté těsto",
+        "syrové těsto",
+        "droždí",
+        "kvasnice",
+        "kvásek",
+        "těsto na chleba",
+        "těsto na pizzu"
+      ],
+      "animals": [
+        "dog",
+        "cat"
+      ],
+      "level": "danger",
+      "riskType": "toxické + mechanické",
+      "evidence": "dobře doloženo u psů i koček",
+      "principle": "rozpínání těsta a tvorba etanolu při kvašení",
+      "summary": "Těsto se může v žaludku dále rozpínat a při kvašení vytváří alkohol. Jde o mechanické i toxikologické riziko zároveň.",
+      "signs": "nafouklé břicho, neúspěšné dávení, útlum, nekoordinovanost, třes",
+      "action": "Volejte veterináři ihned; při nafouknutém břiše, útlumu nebo dávení jeďte rovnou na pohotovost.",
+      "sources": [
+        "merckFoods"
+      ],
+      "reviewedAt": "2026-10-09",
+      "vetReview": null
+    },
+    {
+      "id": "macadamia",
+      "name": "Makadamové ořechy",
+      "aliases": [
+        "makadamové ořechy",
+        "makadamový ořech",
+        "makadamie",
+        "macadamia"
+      ],
+      "animals": [
+        "dog"
+      ],
+      "level": "danger",
+      "riskType": "toxické",
+      "evidence": "dobře doloženo u psů",
+      "principle": "neobjasněný toxin; vysoký obsah tuku je další riziko",
+      "summary": "Onemocnění po makadamiových ořeších je popsáno u psů. Často se objeví slabost, nekoordinovanost a třes. U směsí s čokoládou nebo sladidly posuzujte i tyto složky zvlášť.",
+      "signs": "slabost, zvracení, nekoordinovanost, třes, zvýšená teplota",
+      "action": "Volejte veterináři ihned; sdělte množství a zda výrobek obsahoval čokoládu, xylitol nebo další složky.",
+      "sources": [
+        "merckFoods"
+      ],
+      "reviewedAt": "2026-10-09",
+      "vetReview": null
+    },
+    {
+      "id": "avocado",
+      "name": "Avokádo — dužina za popsaných podmínek",
+      "aliases": [
+        "avokádo",
+        "avocado",
+        "guacamole",
+        "avokádová pecka",
+        "pecka z avokáda"
+      ],
+      "animals": [
+        "dog",
+        "cat"
+      ],
+      "level": "safe",
+      "riskType": "obvykle nízké za popsaných podmínek",
+      "evidence": "dobře doloženo pro psy a kočky (dužina)",
+      "principle": "dužina není pro psy a kočky považována za systémový toxin; rizikem je pecka a obsah tuku",
+      "summary": "Dužina avokáda není pro psy a kočky považována za toxickou za popsaných podmínek (malé množství dužiny). Pecka však může způsobit ucpání a větší množství tuku zažívací obtíže. Neplatí pro ptáky, králíky ani hospodářská zvířata.",
+      "signs": "po větším množství: zvracení, průjem, bolest břicha; po spolknutí pecky také známky neprůchodnosti (dávení, nechutenství, zácpa)",
+      "action": "Za popsaných podmínek stačí obvykle sledovat; po spolknutí pecky, větším množství nebo při potížích volejte veterináři. Avokádo nepodávejte ptákům, králíkům ani hospodářským zvířatům.",
+      "sources": [
+        "poisonHelpAvocado"
+      ],
+      "reviewedAt": "2026-10-09",
+      "vetReview": null
+    },
+    {
+      "id": "dairy",
+      "name": "Mléko a mléčné výrobky",
+      "aliases": [
+        "mléko",
+        "smetana",
+        "sýr",
+        "tvaroh",
+        "jogurt",
+        "kefír",
+        "zmrzlina",
+        "laktóza"
+      ],
+      "animals": [
+        "dog",
+        "cat"
+      ],
+      "level": "caution",
+      "riskType": "podmíněné",
+      "evidence": "dobře doloženo (snášenlivost laktózy)",
+      "principle": "laktóza a často také vysoký obsah tuku",
+      "summary": "Mnohá zvířata mají málo enzymu laktázy, a mléčné výrobky jim proto mohou způsobit zažívací potíže. Nejde obvykle o akutní otravu; záleží na množství a složení.",
+      "signs": "průjem, zvracení, plynatost nebo bolest břicha",
+      "action": "Pokud zvíře snědlo větší porci, opakovaně zvrací, má průjem, nebo výrobek obsahoval další rizikové složky (čokoláda, xylitol), volejte veterináři. Jinak sledujte a nabídněte vodu.",
+      "sources": [
+        "aspca"
+      ],
+      "reviewedAt": "2026-10-09",
+      "vetReview": null,
+      "byAnimal": {
+        "cat": {
+          "sources": [
+            "cornellCats"
+          ]
+        }
+      }
+    },
+    {
+      "id": "fatty-foods",
+      "name": "Tučná jídla a běžné ořechy (kromě makadamie)",
+      "aliases": [
+        "tučné maso",
+        "slanina",
+        "slaninový tuk",
+        "výpek",
+        "smažené jídlo",
+        "mastné jídlo",
+        "vlašské ořechy",
+        "vlašský ořech",
+        "pekany",
+        "pekanové ořechy",
+        "mandle",
+        "pistácie"
+      ],
+      "animals": [
+        "dog",
+        "cat"
+      ],
+      "level": "caution",
+      "riskType": "podmíněné",
+      "evidence": "dobře doloženo (vysoký tuk, slinivka)",
+      "principle": "vysoký obsah tuků; podle výrobku i další složky (sůl, koření)",
+      "summary": "Tučná lidská jídla a některé běžné ořechy mohou vyvolat zvracení, průjem a u citlivých zvířat i zánět slinivky. Makadamové ořechy mají vlastní kartu s vyšší naléhavostí.",
+      "signs": "zvracení, průjem, bolest břicha, nechutenství, apatie",
+      "action": "Pokud zvíře snědlo větší porci, má bolest břicha nebo opakovaně zvrací, volejte veterináři.",
+      "sources": [
+        "aspca"
+      ],
+      "reviewedAt": "2026-10-09",
+      "vetReview": null
+    },
+    {
+      "id": "bones",
+      "name": "Kosti — mechanické riziko",
+      "aliases": [
+        "kost",
+        "kosti",
+        "kuřecí kost",
+        "vařená kost",
+        "grilovaná kost",
+        "rybí kost",
+        "kost z vývaru"
+      ],
+      "animals": [
+        "dog",
+        "cat"
+      ],
+      "level": "danger",
+      "riskType": "mechanické",
+      "evidence": "dobře doloženo (poranění, neprůchodnost)",
+      "principle": "mechanické poranění nebo neprůchodnost, nikoli klasický toxin",
+      "summary": "Kosti se mohou zaseknout, způsobit poranění nebo neprůchodnost zažívacího traktu. Nejde o otravu toxickou látkou, ale o mechanické nebezpečí. Riziko se týká i kostí podávaných jako pamlsek.",
+      "signs": "dávení, slinění, zvracení, bolest břicha, namáhavé vyprazdňování nebo apatie",
+      "action": "Při spolknutí větší kosti, dávení nebo potížích volejte veterináři ihned. Bez jeho pokynu se nesnažte kost vytahovat ani vyvolávat zvracení; při dušení jeďte na pohotovost.",
+      "sources": [
+        "aspca"
+      ],
+      "reviewedAt": "2026-10-09",
+      "vetReview": null
+    },
+    {
+      "id": "salt",
+      "name": "Sůl a velmi slané potraviny",
+      "aliases": [
+        "sůl",
+        "kuchyňská sůl",
+        "mořská sůl",
+        "chipsy",
+        "preclíky",
+        "solené ořechy",
+        "slaný nálev",
+        "mořská voda"
+      ],
+      "animals": [
+        "dog",
+        "cat"
+      ],
+      "level": "caution",
+      "riskType": "podmíněné",
+      "evidence": "dobře doloženo (nadbytek sodíku)",
+      "principle": "nadbytek sodíku",
+      "summary": "Nadměrné množství soli může narušit rovnováhu elektrolytů. Samotné ochutnání obvykle neznamená stejnou situaci jako velká dávka nebo vypití slaného nálevu či mořské vody.",
+      "signs": "silná žízeň, zvracení, průjem, útlum, třes nebo záchvaty",
+      "action": "Při větším množství, vypití slaného nálevu či mořské vody, nebo při jakýchkoli neurologických příznacích volejte veterináři ihned. Jinak sledujte příjem vody a potíže.",
+      "sources": [
+        "aspca"
+      ],
+      "reviewedAt": "2026-10-09",
+      "vetReview": null
+    },
+    {
+      "id": "raw-meat-eggs",
+      "name": "Syrové maso a vejce",
+      "aliases": [
+        "syrové maso",
+        "syrové kuřecí maso",
+        "syrové vejce",
+        "syrová vejce",
+        "tatarák",
+        "tatarský biftek",
+        "BARF",
+        "raw dieta",
+        "syrová strava"
+      ],
+      "animals": [
+        "dog",
+        "cat"
+      ],
+      "level": "caution",
+      "riskType": "podmíněné",
+      "evidence": "dobře doloženo (bakterie, paraziti)",
+      "principle": "bakteriální a parazitární kontaminace (např. Salmonella, E. coli)",
+      "summary": "Syrové živočišné produkty mohou obsahovat bakterie a parazity. Vařené libové maso bez kostí a koření se posuzuje jinak — tato karta řeší pouze syrové. Riziko se týká zvířete i lidí v domácnosti.",
+      "signs": "zvracení, průjem, nechutenství, únava nebo horečka",
+      "action": "Při příznacích, u mláděte, seniora či nemocného zvířete volejte veterináři. Dodržujte hygienu při úklidu.",
+      "sources": [
+        "aspca"
+      ],
+      "reviewedAt": "2026-10-09",
+      "vetReview": null
+    },
+    {
+      "id": "citrus",
+      "name": "Citrusy a citrusové slupky",
+      "aliases": [
+        "citron",
+        "pomeranč",
+        "limetka",
+        "limeta",
+        "grep",
+        "grapefruit",
+        "mandarinka",
+        "pomelo",
+        "citrusová kůra",
+        "citrusové slupky",
+        "citrusový olej"
+      ],
+      "animals": [
+        "dog",
+        "cat"
+      ],
+      "level": "caution",
+      "riskType": "podmíněné",
+      "evidence": "dobře doloženo",
+      "principle": "kyselina citronová a esenciální oleje, hlavně ve slupce a rostlině",
+      "summary": "Malé množství dužiny obvykle vede nanejvýš k mírnému podráždění. Větší množství slupky, listů nebo koncentrovaného oleje je rizikovější.",
+      "signs": "slinění, zvracení, průjem, podráždění nebo útlum",
+      "action": "Po požití oleje, většího množství slupek nebo při potížích volejte veterináři.",
+      "sources": [
+        "aspca"
+      ],
+      "reviewedAt": "2026-10-09",
+      "vetReview": null
+    }
+  ]
+}

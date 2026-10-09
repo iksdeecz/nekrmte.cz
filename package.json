@@ -1,0 +1,14 @@
+{
+  "name": "nekrmte.cz",
+  "version": "1.0.0",
+  "description": "Statický web pro rychlou orientaci při požití potraviny psem nebo kočkou.",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "check": "node scripts/build.mjs --check"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
