@@ -14,8 +14,10 @@ import {
 
   const foodsElement = document.getElementById("foods");
   const search = document.getElementById("food-search");
+  const searchForm = document.getElementById("search-form");
   const summary = document.getElementById("results-summary");
   const resultsTitle = document.getElementById("results-title");
+  const resultsElement = document.querySelector(".results");
   const animalButtons = [...document.querySelectorAll(".animal-button")];
   const themeToggle = document.getElementById("theme-toggle");
 
@@ -169,6 +171,15 @@ import {
       state.query = search.value;
       renderFoods();
     }, 150);
+  });
+
+  searchForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    clearTimeout(inputTimer);
+    state.query = search.value;
+    renderFoods();
+    resultsElement.scrollIntoView({ block: "start" });
+    resultsTitle.focus({ preventScroll: true });
   });
 
   themeToggle.addEventListener("click", () => {

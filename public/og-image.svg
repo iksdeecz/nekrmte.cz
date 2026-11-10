@@ -1,10 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Nekrmte.cz – když zvíře snědlo něco nevhodného">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Nekrmte.cz – co dělat, když pes snědl něco nevhodného">
   <rect width="1200" height="630" fill="#06384c"/>
   <rect x="60" y="60" width="1080" height="510" rx="28" fill="#f5f7f5"/>
   <text x="120" y="220" font-family="system-ui, sans-serif" font-size="64" font-weight="800" fill="#06384c">Nekrmte.cz</text>
-  <text x="120" y="310" font-family="system-ui, sans-serif" font-size="44" fill="#13222c">Co snědlo vaše zvíře?</text>
-  <text x="120" y="380" font-family="system-ui, sans-serif" font-size="30" fill="#536572">Vybraný přehled rizik pro psy a kočky.</text>
+  <text x="120" y="310" font-family="system-ui, sans-serif" font-size="44" fill="#13222c">Pes snědl něco nevhodného?</text>
+  <text x="120" y="380" font-family="system-ui, sans-serif" font-size="30" fill="#536572">Zjistěte, co dělat a kdy volat veterináři.</text>
   <text x="120" y="440" font-family="system-ui, sans-serif" font-size="30" fill="#a12d24">Při potížích volejte veterináře.</text>
   <circle cx="1020" cy="180" r="52" fill="#d6f4e6"/>
-  <text x="1020" y="200" text-anchor="middle" font-size="56" fill="#06384c">✦</text>
+  <g fill="#06384c">
+    <ellipse cx="1020" cy="198" rx="17" ry="14"/>
+    <ellipse cx="997" cy="176" rx="7" ry="10"/>
+    <ellipse cx="1011" cy="164" rx="7" ry="10"/>
+    <ellipse cx="1029" cy="164" rx="7" ry="10"/>
+    <ellipse cx="1043" cy="176" rx="7" ry="10"/>
+  </g>
 </svg>

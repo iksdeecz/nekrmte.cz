@@ -118,6 +118,7 @@ a:hover { color: var(--link-hover); }
 .header-inner { display: flex; align-items: center; justify-content: space-between; min-height: 4.6rem; }
 .brand { display: inline-flex; gap: .5rem; align-items: center; color: inherit; font-size: 1.2rem; font-weight: 850; letter-spacing: -.035em; text-decoration: none; }
 .brand-mark { display: grid; width: 1.75rem; height: 1.75rem; place-items: center; color: var(--brand-mark-fg); background: var(--brand-mark-bg); border-radius: 50%; }
+.brand-mark svg { width: 1.05rem; height: 1.05rem; fill: currentColor; }
 .theme-toggle {
   display: grid; width: 2.75rem; height: 2.75rem; place-items: center;
   color: inherit; background: rgb(127 127 127 / 18%);
@@ -133,7 +134,7 @@ h1 { max-width: 740px; margin: 0 auto .8rem; font-size: clamp(2.4rem, 6vw, 4.75r
 h2 { font-size: clamp(1.35rem, 3vw, 1.75rem); line-height: 1.17; letter-spacing: -.035em; }
 h3 { font-size: 1.24rem; line-height: 1.2; letter-spacing: -.025em; }
 .hero > p:not(.eyebrow) { max-width: 665px; margin: 0 auto 1.25rem; color: var(--muted); font-size: clamp(1.02rem, 2vw, 1.2rem); }
-.hero-link { display: inline-flex; gap: .45rem; align-items: center; padding: .72rem 1rem; color: var(--hero-fg); background: var(--hero-bg); border-radius: 999px; font-weight: 750; text-decoration: none; }
+.hero .lookup { margin-top: 1.5rem; text-align: left; }
 
 .emergency {
   display: grid; grid-template-columns: auto 1fr; gap: 1rem;
@@ -144,7 +145,15 @@ h3 { font-size: 1.24rem; line-height: 1.2; letter-spacing: -.025em; }
 }
 .emergency .eyebrow { color: inherit; }
 .emergency h2 { margin-bottom: .45rem; }
-.emergency p:last-child { margin-bottom: 0; color: var(--ink); }
+.emergency p { color: var(--ink); }
+.emergency-prep { margin-bottom: .8rem; }
+.emergency-map, .search-submit {
+  display: inline-flex; min-height: 2.9rem; align-items: center; justify-content: center;
+  padding: .65rem 1rem; border: 0; border-radius: .7rem;
+  font-weight: 800; text-decoration: none; cursor: pointer;
+}
+.emergency-map { color: var(--active-fg); background: var(--active-bg); }
+.emergency-map:hover { color: var(--active-fg); filter: brightness(1.08); }
 .emergency-icon {
   display: grid; width: 2.25rem; height: 2.25rem; place-items: center;
   color: var(--icon-fg); background: var(--icon-bg);
@@ -170,6 +179,8 @@ h3 { font-size: 1.24rem; line-height: 1.2; letter-spacing: -.025em; }
 .search-field span { color: var(--link); font-size: 1.5rem; }
 .search-field input { width: 100%; min-height: 3.35rem; min-width: 0; color: var(--ink); background: transparent; border: 0; outline: 0; }
 .search-field input::placeholder { color: var(--muted); }
+.search-submit { width: 100%; margin-top: .8rem; color: var(--active-fg); background: var(--active-bg); font-size: 1rem; }
+.search-submit:hover { filter: brightness(1.08); }
 .search-help { margin: .6rem 0 0; color: var(--muted); font-size: .9rem; }
 .noscript-note { margin: .6rem 0 0; padding: .7rem .9rem; background: var(--surface-soft); border-radius: .6rem; color: var(--ink); font-size: .9rem; }
 

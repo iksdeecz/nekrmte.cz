@@ -3,24 +3,27 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Vybraný přehled rizik vybraných potravin pro psy a kočky s pokyny, kdy volat veterináře. Nenahrazuje veterinární vyšetření.">
+  <meta name="description" content="Pes nebo kočka snědli čokoládu, cibuli, hrozny nebo xylitol? Zjistěte za pár vteřin, jak je to nebezpečné a kdy okamžitě volat veterináře.">
   <meta name="theme-color" content="#06384c" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#0d1a1e" media="(prefers-color-scheme: dark)">
   <meta name="robots" content="index,follow">
   <link rel="canonical" href="https://www.nekrmte.cz/">
-  <meta property="og:title" content="Nekrmte.cz – když zvíře snědlo něco nevhodného">
-  <meta property="og:description" content="Vybraný přehled rizik potravin pro psy a kočky. Při podezření na nebezpečné požití volejte veterináře.">
+  <meta property="og:title" content="Co když pes nebo kočka snědli něco nevhodného? | Nekrmte.cz">
+  <meta property="og:description" content="Pes nebo kočka snědli čokoládu, cibuli, hrozny nebo xylitol? Zjistěte, kdy volat veterináře.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.nekrmte.cz/">
   <meta property="og:locale" content="cs_CZ">
-  <meta property="og:image" content="https://www.nekrmte.cz/og-image.svg">
+  <meta property="og:image" content="https://www.nekrmte.cz/og-image.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Nekrmte.cz – rychlá orientace při požití nevhodné potraviny psem nebo kočkou">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Nekrmte.cz – když zvíře snědlo něco nevhodného">
-  <meta name="twitter:description" content="Vybraný přehled rizik potravin pro psy a kočky. Při potížích volejte veterináře.">
-  <meta name="twitter:image" content="https://www.nekrmte.cz/og-image.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Co když pes nebo kočka snědli něco nevhodného? | Nekrmte.cz">
+  <meta name="twitter:description" content="Pes nebo kočka snědli čokoládu, cibuli, hrozny nebo xylitol? Zjistěte, kdy volat veterináře.">
+  <meta name="twitter:image" content="https://www.nekrmte.cz/og-image.png">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
-  <title>Nekrmte.cz – když zvíře snědlo něco nevhodného</title>
+  <title>Co když pes nebo kočka snědli něco nevhodného? | Nekrmte.cz</title>
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <script src="theme.js"></script>
   <link rel="stylesheet" href="styles.css">
@@ -30,38 +33,41 @@
   <a class="skip-link" href="#vyhledavani">Přeskočit na vyhledávání</a>
   <header class="site-header">
     <div class="header-inner">
-      <a class="brand" href="/" aria-label="Nekrmte.cz, domovská stránka"><span class="brand-mark" aria-hidden="true">✦</span>Nekrmte.cz</a>
+      <a class="brand" href="/" aria-label="Nekrmte.cz, domovská stránka"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 48 48" focusable="false"><ellipse cx="24" cy="31" rx="12" ry="10"/><ellipse cx="10" cy="19" rx="4.5" ry="6"/><ellipse cx="20" cy="12" rx="4.5" ry="6"/><ellipse cx="30" cy="12" rx="4.5" ry="6"/><ellipse cx="39" cy="19" rx="4.5" ry="6"/></svg></span>Nekrmte.cz</a>
       <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Zapnout tmavý režim" title="Změnit barevný režim"><span aria-hidden="true">◐</span><span class="visually-hidden">Změnit barevný režim</span></button>
     </div>
   </header>
   <main>
     <section class="hero" aria-labelledby="page-title">
       <p class="eyebrow">Rychlá orientace při požití</p>
-      <h1 id="page-title">Co snědlo vaše zvíře?</h1>
-      <p>Vyberte zvíře a napište potravinu. Přehled obsahuje pouze vybrané položky s uvedenými zdroji — nenahrazuje veterinární vyšetření a neurčuje bezpečnou dávku.</p>
-      <a class="hero-link" href="#vyhledavani">Vyhledat potravinu <span aria-hidden="true">↓</span></a>
+      <h1 id="page-title">Co snědl váš pes nebo kočka?</h1>
+      <p>Napište potravinu a hned uvidíte, jestli volat veterináře. U každé položky uvádíme zdroj.</p>
+      <section class="lookup" id="vyhledavani" aria-label="Vyhledávání potravin">
+        <div class="animal-switch" role="group" aria-label="Vyberte zvíře">
+          <button class="animal-button is-active" id="animal-dog" type="button" aria-pressed="true" data-animal="dog"><span aria-hidden="true">🐕</span> Pes</button>
+          <button class="animal-button" id="animal-cat" type="button" aria-pressed="false" data-animal="cat"><span aria-hidden="true">🐈</span> Kočka</button>
+        </div>
+        <form id="search-form" class="search-form">
+          <label class="search-label" for="food-search">Co zvíře snědlo?</label>
+          <div class="search-field"><span aria-hidden="true">⌕</span><input id="food-search" type="search" autocomplete="off" spellcheck="false" aria-describedby="search-help" placeholder="Např. čokoláda, hrozny, xylitol…"></div>
+          <button class="search-submit" type="submit">Zjistit, jak je to nebezpečné</button>
+        </form>
+        <p class="search-help" id="search-help">Pište klidně bez diakritiky (např. cokolada). Přehled neobsahuje všechny potraviny a neurčuje bezpečnou dávku.</p>
+        <noscript><p class="noscript-note">Vyhledávání potřebuje JavaScript. Níže najdete statický výběr položek pro psa.</p></noscript>
+      </section>
     </section>
     <aside class="emergency" aria-labelledby="emergency-title">
       <div class="emergency-icon" aria-hidden="true">!</div>
       <div>
         <p class="eyebrow">Nejdřív bezpečí</p>
-        <h2 id="emergency-title">Při potížích nebo požití známého toxinu volejte hned veterináře.</h2>
-        <p>Pokud zvíře kolabuje, má záchvat, potíže s dýcháním nebo opakovaně zvrací, jeďte na veterinární pohotovost. <strong>Bez pokynu veterináře nevyvolávejte zvracení a nepodávejte domácí „protijedy“.</strong></p>
+        <h2 id="emergency-title">Zvíře kolabuje, má křeče nebo se dusí? Jeďte hned na pohotovost.</h2>
+        <p>Po požití známého toxinu nebo při opakovaném zvracení volejte veterináře. <strong>Bez jeho pokynu nevyvolávejte zvracení a nepodávejte domácí „protijedy“.</strong></p>
+        <p class="emergency-prep"><strong>Připravte si:</strong> druh a hmotnost zvířete, obal a složení, odhad množství, čas požití a případné příznaky.</p>
+        <a class="emergency-map" href="https://www.google.com/maps/search/?api=1&amp;query=nonstop+veterin%C3%A1rn%C3%AD+pohotovost" target="_blank" rel="noopener noreferrer">Najít nonstop pohotovost v okolí <span aria-hidden="true">↗</span></a>
       </div>
     </aside>
-    <section class="lookup" id="vyhledavani" aria-labelledby="lookup-title">
-      <div class="lookup-heading"><p class="eyebrow">Krok 1 a 2</p><h2 id="lookup-title">Vyberte zvíře a potravinu</h2></div>
-      <div class="animal-switch" role="group" aria-label="Vyberte zvíře">
-        <button class="animal-button is-active" id="animal-dog" type="button" aria-pressed="true" data-animal="dog"><span aria-hidden="true">🐕</span> Pes</button>
-        <button class="animal-button" id="animal-cat" type="button" aria-pressed="false" data-animal="cat"><span aria-hidden="true">🐈</span> Kočka</button>
-      </div>
-      <label class="search-label" for="food-search">Co zvíře snědlo?</label>
-      <div class="search-field"><span aria-hidden="true">⌕</span><input id="food-search" type="search" autocomplete="off" spellcheck="false" aria-describedby="search-help" placeholder="Např. čokoláda, rozinky, kakao…"></div>
-      <p class="search-help" id="search-help">Hledání rozumí diakritice i přesmyčkám bez diakritiky (např. „cokolada“) a hledá i v příznacích a rizikových látkách. Obecný výrobek bez ověřeného složení (např. žvýkačka, arašídové máslo) se automaticky netváří jako důkaz obsahu rizikové látky.</p>
-      <noscript><p class="noscript-note">Vyhledávání potřebuje JavaScript. Bez něj níže vidíte celý výběr pro psa včetně bezpečnostních pokynů.</p></noscript>
-    </section>
     <section class="results" aria-labelledby="results-title">
-      <div class="results-heading"><div><p class="eyebrow">Výsledek</p><h2 id="results-title">Vybrané potraviny pro psa</h2></div><p class="results-summary" id="results-summary" role="status" aria-live="polite" aria-atomic="true"></p></div>
+      <div class="results-heading"><div><p class="eyebrow">Výsledek</p><h2 id="results-title" tabindex="-1">Vybrané potraviny pro psa</h2></div><p class="results-summary" id="results-summary" role="status" aria-live="polite" aria-atomic="true"></p></div>
       <div class="risk-key" aria-label="Význam úrovní rizika"><span class="badge danger">Volejte veterináře ihned</span><span class="badge caution">Ověřte a volejte veterináři</span><span class="badge safe">Obvykle netoxické — čtěte podmínky</span></div>
       <div class="food-grid" id="foods">
 <!-- FOODS:STATIC:START -->
@@ -92,13 +98,6 @@
         <li>Nenalezený záznam <strong>neznamená, že je potravina bezpečná</strong>. U neznámé potraviny, léku, chemikálie nebo rostliny kontaktujte veterináře i tehdy, když zde výsledek nenajdete — databáze léky, chemikálie ani rostliny systematicky nepokrývá.</li>
         <li>Obecný výrobek (žvýkačka, sladkost, ořechový krém, proteinová tyčinka, vánočka) se bez přečtení složení nepovažuje za důkaz obsahu xylitolu, čokolády ani rozinek.</li>
         <li>Pravý rybíz rodu <i>Ribes</i> není totéž co tzv. Zante currants (drobné sušené hrozny) — proto hledání „rybíz“ správně nevede na kartu hroznů.</li>
-      </ul>
-      <h3>Co připravit pro veterináře</h3>
-      <ul>
-        <li>druh a hmotnost zvířete,</li>
-        <li>přesný název a složení výrobku (obal s sebou),</li>
-        <li>odhad množství a čas požití,</li>
-        <li>pozorované příznaky.</li>
       </ul>
       <p class="scope-note">Metodika klasifikace: <a href="https://github.com/iksdeecz/nekrmte.cz/blob/main/docs/METODIKA.md" target="_blank" rel="noopener noreferrer">docs/METODIKA.md</a>. Každá karta má stabilní kotvu <code>#jidlo-<i>id</i></code> (např. <a href="#jidlo-chocolate">#jidlo-chocolate</a>).</p>
     </section>
