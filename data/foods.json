@@ -1,7 +1,8 @@
 {
   "meta": {
     "reviewNote": "Redakční kontrola veřejných zdrojů k uvedenému datu u každé položky. Nejde o individuální veterinární atestaci. Viz docs/METODIKA.md.",
-    "methodology": "docs/METODIKA.md"
+    "methodology": "docs/METODIKA.md",
+    "lastModified": "2026-11-10"
   },
   "sourceCatalog": {
     "merckChocolate": {
@@ -58,7 +59,7 @@
       "level": "danger",
       "riskType": "toxické",
       "evidence": "dobře doloženo u psů i koček",
-      "principle": "theobromin a kofein",
+      "principle": "látky z kakaa, které mohou ovlivnit srdce a nervovou soustavu",
       "summary": "Tmavá, pečicí čokoláda a kakao jsou koncentrovanější než mléčná; riziko závisí na druhu výrobku a množství. Přesnou bezpečnou dávku nelze z tohoto přehledu určit.",
       "signs": "zvracení, neklid, třes, zrychlený nebo nepravidelný tep, záchvaty",
       "action": "Volejte veterináři ihned a mějte po ruce obal, druh čokolády, množství, čas požití a hmotnost zvířete. Při záchvatu, kolapsu nebo potížích s dýcháním jeďte na pohotovost.",
@@ -95,8 +96,8 @@
       "level": "danger",
       "riskType": "toxické",
       "evidence": "dobře doloženo u psů i koček",
-      "principle": "kofein (methylxanthin, včetně theinu)",
-      "summary": "Kofein je stimulant; koncentrované zdroje jako sedlina, zrna, tablety a energetické nápoje představují vyšší riziko. Kolové a jiné míchané nápoje posuzujte vždy podle skutečného složení.",
+      "principle": "kofein (v čaji se mu říká také tein)",
+      "summary": "Kofein povzbuzuje organismus. Více ho obsahuje kávová sedlina, kávová zrna, tablety a energetické nápoje. Kolové a jiné míchané nápoje posuzujte vždy podle skutečného složení.",
       "signs": "neklid, zvracení, zrychlený tep, třes, záchvaty",
       "action": "Volejte veterináři ihned, bez čekání na příznaky; vezměte s sebou obal nebo informaci o koncentraci. Při záchvatu nebo kolapsu jeďte na pohotovost.",
       "sources": [
@@ -125,9 +126,9 @@
       "level": "danger",
       "riskType": "toxické",
       "evidence": "dobře doloženo u psů i koček",
-      "principle": "etanol",
+      "principle": "alkohol (etanol)",
       "summary": "Alkohol se rychle vstřebává. Rizikové mohou být také výrobky a potraviny obsahující alkohol.",
-      "signs": "zvracení, nekoordinovanost, útlum, potíže s dýcháním, třes, kóma",
+      "signs": "zvracení, vrávorání, nezvyklá ospalost, potíže s dýcháním, třes, bezvědomí",
       "action": "Volejte veterináři ihned; při poruše vědomí, křečích či potížích s dýcháním jeďte na pohotovost.",
       "sources": [
         "aspca"
@@ -156,10 +157,10 @@
       "level": "danger",
       "riskType": "toxické",
       "evidence": "dobře doloženo u psů i koček",
-      "principle": "sloučeniny rodu Allium poškozující červené krvinky",
+      "principle": "látky v cibuli, česneku a pažitce, které poškozují červené krvinky",
       "summary": "Rizikové jsou čerstvé, sušené i práškové formy a ochucená hotová jídla. Kočky jsou citlivější, riziko však existuje i u psů.",
       "signs": "zažívací potíže, únava, bledé sliznice, zrychlené dýchání nebo tep",
-      "action": "Volejte veterináři ihned, zvlášť po požití koncentrované nebo neznámé dávky; příznaky chudokrevnosti se mohou objevit až později.",
+      "action": "Volejte veterináři ihned, zvlášť po požití sušené či práškové cibule nebo neznámého množství; potíže se mohou projevit až později.",
       "sources": [
         "aspca"
       ],
@@ -189,7 +190,7 @@
       "evidence": "dobře doloženo u psů",
       "principle": "pravděpodobně kyselina vinná; obsah se mezi plody liší",
       "summary": "U psů mohou hrozny, rozinky a tamarind vést k akutnímu poškození ledvin. Nelze určit bezpečné množství. Pravý rybíz rodu Ribes (červený, černý) není totéž co tzv. Zante currants, což jsou drobné sušené hrozny — rybíz proto do této karty nepatří.",
-      "signs": "zvracení nebo průjem, letargie, nechutenství, žízeň; následně potíže s ledvinami",
+      "signs": "zvracení nebo průjem, výrazná únava, nechutenství, žízeň; později také potíže s ledvinami",
       "action": "U psa volejte veterináři ihned, i když snědl malé množství a zatím nemá příznaky.",
       "sources": [
         "merckGrapes",
@@ -203,7 +204,7 @@
           "riskType": "toxické u psů / nejasné u koček",
           "evidence": "omezené podklady u koček",
           "summary": "Závažné případy jsou dobře popsány u psů. U koček existují ojedinělá hlášení, ale nejsou publikované série případů; neznamená to, že je požití bezpečné.",
-          "signs": "zvracení, průjem, letargie nebo jiné potíže po požití",
+          "signs": "zvracení, průjem, výrazná únava nebo jiné potíže po požití",
           "action": "Ověřte množství a čas požití a volejte veterináři; postup se určuje individuálně, při potížích jeďte na pohotovost."
         }
       }
@@ -225,8 +226,8 @@
       "riskType": "toxické u psů / nejasné u koček",
       "evidence": "dobře doloženo u psů",
       "principle": "xylitol (E967)",
-      "summary": "Xylitol se může skrývat ve žvýkačkách bez cukru, bonbonech, pečivu, zubních pastách a některých ořechových krémech či proteinových tyčinkách. Obecný název výrobku (např. žvýkačka, arašídové máslo) sám o obsahu xylitolu nerozhoduje — vždy čtěte složení. U psů může xylitol rychle vyvolat hypoglykemii a ve vyšších dávkách poškození jater.",
-      "signs": "zvracení, slabost, nekoordinovanost, útlum, záchvaty",
+      "summary": "Xylitol se může skrývat ve žvýkačkách bez cukru, bonbonech, pečivu, zubních pastách a některých ořechových krémech či proteinových tyčinkách. Obecný název výrobku (např. žvýkačka, arašídové máslo) sám o obsahu xylitolu nerozhoduje — vždy čtěte složení. U psů může xylitol rychle nebezpečně snížit hladinu cukru v krvi a ve vyšším množství poškodit játra.",
+      "signs": "zvracení, slabost, vrávorání, nezvyklá ospalost, záchvaty",
       "action": "U psa volejte veterináři okamžitě, nečekejte na příznaky a bez jeho pokynu nevyvolávejte zvracení. Připravte přesný název výrobku, složení, množství a čas požití.",
       "sources": [
         "merckFoods"
@@ -268,7 +269,7 @@
       "evidence": "dobře doloženo u psů i koček",
       "principle": "rozpínání těsta a tvorba etanolu při kvašení",
       "summary": "Těsto se může v žaludku dále rozpínat a při kvašení vytváří alkohol. Jde o mechanické i toxikologické riziko zároveň.",
-      "signs": "nafouklé břicho, neúspěšné dávení, útlum, nekoordinovanost, třes",
+      "signs": "nafouklé břicho, neúspěšné dávení, nezvyklá ospalost, vrávorání, třes",
       "action": "Volejte veterináři ihned; při nafouknutém břiše, útlumu nebo dávení jeďte rovnou na pohotovost.",
       "sources": [
         "merckFoods"
@@ -292,8 +293,8 @@
       "riskType": "toxické",
       "evidence": "dobře doloženo u psů",
       "principle": "neobjasněný toxin; vysoký obsah tuku je další riziko",
-      "summary": "Onemocnění po makadamiových ořeších je popsáno u psů. Často se objeví slabost, nekoordinovanost a třes. U směsí s čokoládou nebo sladidly posuzujte i tyto složky zvlášť.",
-      "signs": "slabost, zvracení, nekoordinovanost, třes, zvýšená teplota",
+      "summary": "Onemocnění po makadamiových ořeších je popsáno u psů. Často se objeví slabost, vrávorání a třes. U směsí s čokoládou nebo sladidly posuzujte i tyto složky zvlášť.",
+      "signs": "slabost, zvracení, vrávorání, třes, zvýšená teplota",
       "action": "Volejte veterináři ihned; sdělte množství a zda výrobek obsahoval čokoládu, xylitol nebo další složky.",
       "sources": [
         "merckFoods"
@@ -320,7 +321,7 @@
       "evidence": "dobře doloženo pro psy a kočky (dužina)",
       "principle": "dužina není pro psy a kočky považována za systémový toxin; rizikem je pecka a obsah tuku",
       "summary": "Dužina avokáda není pro psy a kočky považována za toxickou za popsaných podmínek (malé množství dužiny). Pecka však může způsobit ucpání a větší množství tuku zažívací obtíže. Neplatí pro ptáky, králíky ani hospodářská zvířata.",
-      "signs": "po větším množství: zvracení, průjem, bolest břicha; po spolknutí pecky také známky neprůchodnosti (dávení, nechutenství, zácpa)",
+      "signs": "po větším množství: zvracení, průjem, bolest břicha; po spolknutí pecky také známky ucpání trávicího traktu (dávení, nechutenství, zácpa)",
       "action": "Za popsaných podmínek stačí obvykle sledovat; po spolknutí pecky, větším množství nebo při potížích volejte veterináři. Avokádo nepodávejte ptákům, králíkům ani hospodářským zvířatům.",
       "sources": [
         "poisonHelpAvocado"
@@ -391,7 +392,7 @@
       "evidence": "dobře doloženo (vysoký tuk, slinivka)",
       "principle": "vysoký obsah tuků; podle výrobku i další složky (sůl, koření)",
       "summary": "Tučná lidská jídla a některé běžné ořechy mohou vyvolat zvracení, průjem a u citlivých zvířat i zánět slinivky. Makadamové ořechy mají vlastní kartu s vyšší naléhavostí.",
-      "signs": "zvracení, průjem, bolest břicha, nechutenství, apatie",
+      "signs": "zvracení, průjem, bolest břicha, nechutenství, výrazná únava",
       "action": "Pokud zvíře snědlo větší porci, má bolest břicha nebo opakovaně zvrací, volejte veterináři.",
       "sources": [
         "aspca"
@@ -417,10 +418,10 @@
       ],
       "level": "danger",
       "riskType": "mechanické",
-      "evidence": "dobře doloženo (poranění, neprůchodnost)",
-      "principle": "mechanické poranění nebo neprůchodnost, nikoli klasický toxin",
-      "summary": "Kosti se mohou zaseknout, způsobit poranění nebo neprůchodnost zažívacího traktu. Nejde o otravu toxickou látkou, ale o mechanické nebezpečí. Riziko se týká i kostí podávaných jako pamlsek.",
-      "signs": "dávení, slinění, zvracení, bolest břicha, namáhavé vyprazdňování nebo apatie",
+      "evidence": "dobře doloženo (poranění, ucpání trávicího traktu)",
+      "principle": "poranění nebo ucpání trávicího traktu, nikoli klasický jed",
+      "summary": "Kost se může zaseknout, poranit trávicí trakt nebo ho ucpat. Nejde o otravu, ale o mechanické nebezpečí. Riziko se týká i kostí podávaných jako pamlsek.",
+      "signs": "dávení, slinění, zvracení, bolest břicha, obtížné vyprazdňování nebo výrazná únava",
       "action": "Při spolknutí větší kosti, dávení nebo potížích volejte veterináři ihned. Bez jeho pokynu se nesnažte kost vytahovat ani vyvolávat zvracení; při dušení jeďte na pohotovost.",
       "sources": [
         "aspca"
@@ -449,7 +450,7 @@
       "riskType": "podmíněné",
       "evidence": "dobře doloženo (nadbytek sodíku)",
       "principle": "nadbytek sodíku",
-      "summary": "Nadměrné množství soli může narušit rovnováhu elektrolytů. Samotné ochutnání obvykle neznamená stejnou situaci jako velká dávka nebo vypití slaného nálevu či mořské vody.",
+      "summary": "Velké množství soli může narušit rovnováhu solí a minerálů v těle. Samotné ochutnání obvykle neznamená stejnou situaci jako velká dávka nebo vypití slaného nálevu či mořské vody.",
       "signs": "silná žízeň, zvracení, průjem, útlum, třes nebo záchvaty",
       "action": "Při větším množství, vypití slaného nálevu či mořské vody, nebo při jakýchkoli neurologických příznacích volejte veterináři ihned. Jinak sledujte příjem vody a potíže.",
       "sources": [

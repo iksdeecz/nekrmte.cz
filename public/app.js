@@ -21,7 +21,7 @@ import {
   const animalButtons = [...document.querySelectorAll(".animal-button")];
   const themeToggle = document.getElementById("theme-toggle");
 
-  const state = { animal: "dog", query: "" };
+  const state = { animal: null, query: "" };
 
   // Data: jediný zdroj je <script type="application/json" id="foods-data">,
   // generovaný z data/foods.json (scripts/build.mjs). Žádná druhá kopie v JS.
@@ -59,17 +59,24 @@ import {
   function renderCard(food) {
     const card = makeElement("article", `food-card ${food.level}`);
     card.id = `jidlo-${food.id}`;
+    card.dataset.animal = state.animal;
     const top = makeElement("div", "card-top");
     top.append(makeElement("span", `badge ${food.level}`, LEVEL_LABELS[food.level] || food.level));
-    top.append(makeElement("span", "badge", `Podklady: ${food.evidence}`));
+    top.append(makeElement("span", "animal-context", `Pro ${ANIMAL_NAMES[state.animal]}`));
     const title = makeElement("h3", "", food.name);
     const description = makeElement("p", "card-summary", food.summary);
-    const facts = makeElement("dl", "facts");
-    appendFact(facts, "Typ rizika", food.riskType || "—");
-    appendFact(facts, "Rizikový faktor", food.principle);
-    appendFact(facts, "Možné příznaky", food.signs);
     const action = makeElement("p", "card-action");
-    action.append(makeElement("strong", "", "Co udělat"), document.createTextNode(`: ${food.action}`));
+    action.append(makeElement("strong", "", "Co udělat teď"), document.createTextNode(`: ${food.action}`));
+    const callVet = makeElement("a", "card-call-vet", "📞 Volat veterináře");
+    callVet.href = "#veterinar";
+    callVet.dataset.vetLink = "";
+    const prepare = makeElement("p", "card-prepare");
+    prepare.append(makeElement("strong", "", "Co mít po ruce"), document.createTextNode(": obal nebo přesný název, odhad množství, čas požití, hmotnost zvířete a případné příznaky."));
+    const signs = makeElement("p", "card-signs");
+    signs.append(makeElement("strong", "", "Možné příznaky"), document.createTextNode(`: ${food.signs}`));
+    const details = makeElement("details", "card-details");
+    details.append(makeElement("summary", "", "Proč je to nebezpečné"));
+    details.append(makeElement("p", "", `${food.riskType || "Riziko"}: ${food.principle}.`));
     const source = makeElement("p", "card-source");
     source.append(document.createTextNode("Zdroj: "));
     const srcs = resolvedSources(
@@ -78,7 +85,7 @@ import {
       catalog
     );
     srcs.forEach((s, i) => {
-      const link = makeElement("a", "", s.label);
+      const link = makeElement("a", "", `${s.label} (EN)`);
       link.href = s.url;
       link.target = "_blank";
       link.rel = "noopener noreferrer";
@@ -87,41 +94,83 @@ import {
     });
     source.append(
       document.createElement("br"),
-      document.createTextNode(`Kontrola podkladů: ${formatCsDate(food.reviewedAt)} (redakční kontrola zdrojů, nikoli veterinární atestace). `)
+      document.createTextNode(`Redakční kontrola zdroje: ${formatCsDate(food.reviewedAt)}. `)
     );
     const permalink = makeElement("a", "card-link", "Odkaz na kartu");
     permalink.href = `#jidlo-${food.id}`;
     source.append(permalink);
-    card.append(top, title, description, facts, action, source);
+    const detailLink = makeElement("a", "card-link", "Podrobná stránka");
+    detailLink.href = `/${state.animal === "dog" ? "pes" : "kocka"}/${food.seoSlug}/`;
+    source.append(document.createTextNode(" · "), detailLink);
+    const relatedIds = { chocolate: ["xylitol"], xylitol: ["chocolate"], "fatty-foods": ["macadamia"], macadamia: ["fatty-foods"] }[food.id] || [];
+    let related = null;
+    if (relatedIds.length) {
+      related = makeElement("p", "card-related");
+      related.append(document.createTextNode("Související: "));
+      relatedIds.forEach((id) => {
+        const item = foods.find((entry) => entry.id === id);
+        if (!item || !item.animals.includes(state.animal)) return;
+        const link = makeElement("a", "", item.name);
+        link.href = `/${state.animal === "dog" ? "pes" : "kocka"}/${item.seoSlug}/`;
+        related.append(link);
+      });
+    }
+    card.append(top, title, description, action, callVet, prepare, signs, details, source);
+    if (related) card.append(related);
     return card;
+  }
+
+  function addEmergencyLinks(container, query) {
+    const actions = makeElement("div", "empty-actions");
+    const call = makeElement("a", "card-call-vet", "Volat veterináře");
+    call.href = "#veterinar";
+    call.dataset.vetLink = "";
+    const map = makeElement("a", "emergency-map", "Najít nonstop pohotovost v okolí");
+    map.href = "https://www.google.com/maps/search/?api=1&query=nonstop+veterin%C3%A1rn%C3%AD+pohotovost";
+    map.target = "_blank";
+    map.rel = "noopener noreferrer";
+    const suggest = makeElement("a", "suggest-food", "Navrhnout doplnění");
+    const issue = new URL("https://github.com/iksdeecz/nekrmte.cz/issues/new");
+    issue.searchParams.set("title", `Návrh položky: ${query}`);
+    issue.searchParams.set("body", `V přehledu chybí: ${query}\n\nDruh zvířete: ${ANIMAL_NAMES[state.animal] || "neuveden"}`);
+    suggest.href = issue.href;
+    suggest.target = "_blank";
+    suggest.rel = "noopener noreferrer";
+    actions.append(call, map, suggest);
+    container.append(actions);
   }
 
   function emptyState(query) {
     const empty = makeElement("div", "empty-state");
     empty.append(
-      makeElement("strong", "", "Tuto položku v ověřeném výběru nemáme."),
+      makeElement("strong", "", "Tohle v přehledu nemáme."),
       makeElement(
         "p",
         "",
-        "Nenalezený záznam neznamená, že je potravina bezpečná. " +
-          "Ověřte přesný název a složení výrobku (obal), odhad množství, čas požití a příznaky."
+        "To neznamená, že je to bezpečné. Ověřte přesný název a složení výrobku, odhad množství, čas požití a příznaky. Zavolejte veterináři."
       ),
       makeElement(
         "p",
         "",
-        "U neznámé potraviny, a vždy u léků, chemikálií a rostlin, kontaktujte veterináře. " +
-          "Obecný výrobek (např. žvýkačka, sladkost, ořechový krém) bez přečtení složení nepovažujte za důkaz obsahu xylitolu, čokolády ani rozinek."
-      ),
-      makeElement(
-        "p",
-        "",
-        `Hledali jste „${query}“ pro ${ANIMAL_GEN[state.animal]}. Připravte si pro veterináře: druh a hmotnost zvířete, název a složení, množství, čas a příznaky.`
+        `Hledali jste „${query}“ pro ${ANIMAL_GEN[state.animal]}. Připravte si obal, množství, čas požití, hmotnost zvířete a případné příznaky.`
       )
     );
+    addEmergencyLinks(empty, query);
     return empty;
   }
 
   function renderFoods() {
+    if (!state.animal) {
+      document.documentElement.classList.remove("animal-selected");
+      foodsElement.replaceChildren();
+      resultsTitle.textContent = "Nejdřív vyberte zvíře";
+      summary.textContent = "Vyberte psa nebo kočku, aby se zobrazily správné informace.";
+      const prompt = makeElement("div", "empty-state");
+      prompt.append(makeElement("strong", "", "O jaké zvíře jde?"), makeElement("p", "", "Vyberte psa nebo kočku nad vyhledáváním. Riziko se může mezi druhy lišit."));
+      foodsElement.append(prompt);
+      return;
+    }
+    document.documentElement.classList.add("animal-selected");
     const filtered = filterFoods(foods, state.animal, state.query);
     foodsElement.replaceChildren();
     resultsTitle.textContent = `Vybrané potraviny pro ${ANIMAL_NAMES[state.animal]}`;
@@ -131,6 +180,7 @@ import {
         ? `Pro ${ANIMAL_GEN[state.animal]} nic neodpovídá dotazu „${q}“. Neznamená to, že je to bezpečné.`
         : `Pro ${ANIMAL_GEN[state.animal]} nebyla nalezena žádná položka.`;
       foodsElement.append(emptyState(q || "—"));
+      window.updateVetLinks?.();
       return;
     }
     const names = filtered.map((f) => f.name).join(", ");
@@ -139,6 +189,7 @@ import {
         ? `Nalezena 1 položka pro ${ANIMAL_GEN[state.animal]}: ${names}.`
         : `Nalezeno ${filtered.length} položek pro ${ANIMAL_GEN[state.animal]}: ${names}.`;
     foodsElement.append(...filtered.map(renderCard));
+    window.updateVetLinks?.();
   }
 
   function setAnimal(animal, opts = {}) {
@@ -180,16 +231,6 @@ import {
     renderFoods();
     resultsElement.scrollIntoView({ block: "start" });
     resultsTitle.focus({ preventScroll: true });
-  });
-
-  themeToggle.addEventListener("click", () => {
-    const isDark = document.documentElement.dataset.theme !== "dark";
-    setTheme(isDark);
-    try {
-      localStorage.setItem("nekrmte-theme", isDark ? "dark" : "light");
-    } catch {
-      // Uložené nastavení je volitelné (např. soukromý režim).
-    }
   });
 
   // Hluboké odkazy #jidlo-<id>: po načtení ukázat správné zvíře a skrolovat.

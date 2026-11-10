@@ -1,6 +1,6 @@
 # Metodika klasifikace rizika — Nekrmte.cz
 
-Poslední revize metodiky: 2026-10-09.
+Poslední revize metodiky: 2026-11-10.
 Stav: redakční kontrola veřejně dostupných odborných zdrojů. **Nejde o individuální
 veterinární posouzení jednotlivých karet.** Pokud údaj není doložen, je to v datech
 explicitně uvedeno (`evidence` obsahuje „omezené podklady" / „nejasné" a karta uvádí,
@@ -31,9 +31,9 @@ stejně rychlý zásah. Proto je typ a naléhavost uvedena vždy obě.
 
 | `level` | Štítek v UI | Kdy použít |
 |---|---|---|
-| `danger` | „Volejte veterináře ihned" | Doložené závažné riziko, i malé množství může být problém, nebo mechanické riziko s rychlým zhoršením. Akce vždy obsahuje „volejte ihned / jeďte na pohotovost při příznacích". |
-| `caution` | „Ověřte a volejte veterináři" | Podmíněné riziko, nejasné podklady pro daný druh, nebo mírnější průběh. Akce vždy obsahuje podmínku („podle složení / množství / příznaků volejte"). |
-| `safe` | „Obvykle netoxické — čtěte podmínky" | Pouze když zdroje pro psy a kočky shodně uvádějí, že daná část/příprava není systémově toxická, **a** karta zároveň popisuje zbývající rizika (pecka, tuk, množství). Nikdy neznamená „libovolné množství je bezpečné". |
+| `danger` | „Volejte hned" | Doložené závažné riziko, i malé množství může být problém, nebo mechanické riziko s rychlým zhoršením. Akce vždy obsahuje „volejte ihned / jeďte na pohotovost při příznacích". |
+| `caution` | „Zavolejte, pokud…" | Podmíněné riziko, nejasné podklady pro daný druh, nebo mírnější průběh. Akce vždy obsahuje konkrétní podmínku („podle složení / množství / příznaků volejte"). |
+| `safe` | „Obvykle v pořádku, sledujte" | Pouze když zdroje pro psy a kočky shodně uvádějí, že daná část/příprava není systémově toxická, **a** karta zároveň popisuje zbývající rizika (pecka, tuk, množství). Nikdy neznamená „libovolné množství je bezpečné". |
 
 Pravidla konzistence (vynuceno testy):
 
@@ -69,7 +69,7 @@ Vyhledávání (viz `lib/search.mjs` → `filterFoods`):
 - `summary` se záměrně NEprohledává: obsahuje i podmíněné příklady
   („zkontrolujte složení žvýkaček…", „rybíz do této karty nepatří"),
   které by jinak vytvářely falešně jisté shody,
-- nejdřív filtr druhu (`animals`), pak dotaz, řazení `danger → caution → safe`, pak abecedně.
+- nejdřív filtr druhu (`animals`), pak dotaz, řazení `danger → caution → safe`; uvnitř skupiny se nejčastěji hledaná urgentní rizika (čokoláda, xylitol, hrozny) zobrazí přednostně.
 
 ## 3. Evidence zdrojů
 
@@ -83,6 +83,8 @@ Vyhledávání (viz `lib/search.mjs` → `filterFoods`):
 - Rozlišujeme důkazy pro psy a kočky (`evidence` vs. `byAnimal.cat.evidence`).
   Hlavní zdroje: Merck Veterinary Manual, ASPCA Poison Control, Cornell University
   College of Veterinary Medicine, Pet Poison Helpline (avokádo).
+- U externích zdrojů v angličtině je uvedeno označení „(EN)“; karta poskytuje
+  české shrnutí hlavních informací.
 
 ## 4. Bezpečnostní sdělení
 
@@ -93,12 +95,21 @@ Vyhledávání (viz `lib/search.mjs` → `filterFoods`):
 - Seznam pro veterináře: druh a hmotnost zvířete, přesný název a složení výrobku,
   odhad množství, čas požití, pozorované příznaky, obal s sebou.
 - Bez pokynu veterináře nevyvolávat zvracení ani nepodávat domácí „protijedy".
-- Nevymýšlíme telefonní čísla ani pohotovosti. Odkaz na externí vyhledávač pomoci
-  není přidán, protože nebyla ověřena důvěryhodná česká služba.
+- Číslo uložené přes „Uložit číslo mého veterináře" zůstává v `localStorage`
+  konkrétního prohlížeče; web ho neodesílá ani nesdílí.
+- Odkaz na Google Maps hledá nonstop veterinární pohotovost podle aktuální
+  polohy/prostředí uživatele. Jde o vyhledávání, ne ověřený seznam ordinací;
+  před cestou si dostupnost ověřte telefonicky.
+- Dotazy bez shody neposíláme na server ani nelogujeme. Návrh doplnění otevře
+  předvyplněný GitHub issue, který uživatel sám zkontroluje a odešle.
 
 ## 5. Co zbývá na veterinární posouzení
 
 - Validace všech `caution`/`safe` klasifikací pro kočky (omezené publikované údaje).
 - Případné dávkovací prahy — záměrně neuvádíme; kalkulačku toxicity nepřidávat
   bez validovaných podkladů a specifikace druhu.
-- Rozšíření o léky, chemikálie a rostliny — zatím pouze obecný pokyn volat veterináře.
+- Léky, chemikálie a rostliny nejsou součástí vyhledávací databáze. Na stránce je
+  pouze stručný výběr nouzových příkladů (lilie u koček, lidské léky proti bolesti,
+  nemrznoucí směs) s odkazy na zdroje a pokynem kontaktovat veterináře.
+- Naléhavost mechanického rizika u kostí vyžaduje odbornou kontrolu; štítek nebyl
+  bez veterinárního posouzení změněn.
